@@ -2,47 +2,99 @@ import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
-import menu_1 from './menu_1.png'
-import menu_2 from './menu_2.png'
-import menu_3 from './menu_3.png'
-import menu_4 from './menu_4.png'
-import menu_5 from './menu_5.png'
-import menu_6 from './menu_6.png'
-import menu_7 from './menu_7.png'
-import menu_8 from './menu_8.png'
 
-import food_1 from './food_1.png'
-import food_2 from './food_2.png'
-import food_3 from './food_3.png'
-import food_4 from './food_4.png'
-import food_5 from './food_5.png'
-import food_6 from './food_6.png'
-import food_7 from './food_7.png'
-import food_8 from './food_8.png'
-import food_9 from './food_9.png'
-import food_10 from './food_10.png'
-import food_11 from './food_11.png'
-import food_12 from './food_12.png'
-import food_13 from './food_13.png'
-import food_14 from './food_14.png'
-import food_15 from './food_15.png'
-import food_16 from './food_16.png'
-import food_17 from './food_17.png'
-import food_18 from './food_18.png'
-import food_19 from './food_19.png'
-import food_20 from './food_20.png'
-import food_21 from './food_21.png'
-import food_22 from './food_22.png'
-import food_23 from './food_23.png'
-import food_24 from './food_24.png'
-import food_25 from './food_25.png'
-import food_26 from './food_26.png'
-import food_27 from './food_27.png'
-import food_28 from './food_28.png'
-import food_29 from './food_29.png'
-import food_30 from './food_30.png'
-import food_31 from './food_31.png'
-import food_32 from './food_32.png'
+import menu_1 from './menu_1.png'
+
+
+import curry from './img/curry.jpeg'
+import Tandoori from './img/tandoori1.jpeg'
+import Paneer from './img/paneer.jpeg'
+import Dal from './img/dal.jpeg'
+import Paratha from './img/methiparatha.jpeg'
+import Chaat from './img/sevpuri.jpeg'
+import Samosa from './img/keemasamosa.jpeg'
+// import Samosa from './img/keemasamosa.jpeg'
+import Idli from './img/plainidle.jpg'
+import Dosa from './img/mysoredosa.jpg'
+
+
+
+import Vada from './img/vada.jpeg'
+import Pulao from './img/pulao.jpeg'
+import Raita from './img/raita.jpeg'
+import Kebab from './img/kebab.jpeg'
+import Halwa from './img/halwa.jpeg'
+
+
+
+
+
+
+import curry_1 from './img/curry1.jpeg'
+import curry_2 from './img/curry2.jpeg'
+import curry_3 from './img/curry3.jpeg'
+import curry_4 from './img/curry4.jpeg'
+import curry_5 from './img/curry.jpeg'
+import tandoori_1 from './img/tandoori1.jpeg'
+import tandoori_2 from './img/tandoori2.jpeg'
+import tandoori_3 from './img/tandoori1 brooli.jpeg'
+import tandoori_4 from './img/tandoori1 aloo.jpeg'
+import paneer_1 from './img/paneer1.jpeg'
+import paneer_2 from './img/paneer2.jpeg'
+import paneer_3 from './img/paneer3.jpeg'
+import paneer_4 from './img/paneer4.jpeg'
+import paneer_6 from './img/paneer6.jpeg'
+import paneer_7 from './img/paneer7.jpeg'
+import dal_1 from './img/dal.jpeg'
+import dal_2 from './img/dal2.jpeg'
+import dal_3 from './img/dal3.jpeg'
+import dal_4 from './img/dal4.jpeg'
+import dal_5 from './img/dal5.jpeg'
+import dal_6 from './img/dal6.jpeg'
+import dal_7 from './img/dal7.jpeg'
+import dal_8 from './img/dal8.jpeg'
+
+import paratha_2 from './img/gobi paratha.jpeg'
+import paratha_3 from './img/aloo pratha.jpeg'
+import paratha_4 from './img/panner paratha.jpeg'
+import paratha_5 from './img/methiparatha.jpeg'
+import paratha_6 from './img/lacha paratha.jpeg'
+import paratha_7 from './img/onion praha.jpeg'
+
+import chaat_1 from './img/panipuri.jpeg'
+import chaat_2 from './img/bhel puri.jpeg'
+import chaat_3 from './img/papdi chat.jpeg'
+import chaat_4 from './img/dahi puri.jpeg'
+import chaat_5 from './img/aloo tikki chat.jpeg'
+import chaat_7 from './img/sevpuri.jpeg'
+import chaat_8 from './img/raj kachori.jpeg'
+
+import samosa_1 from './img/aloosamosa.jpeg'
+import samosa_2 from './img/paneersamosa.jpeg'
+import samosa_3 from './img/keemasamosa.jpeg'
+import samosa_4 from './img/cornsamosa.jpeg'
+import samosa_5 from './img/vegsamosa.jpeg'
+import samosa_6 from './img/cheesesamosa.jpeg'
+
+import idli_1 from './img/plainidle.jpg'
+import idli_2 from './img/ravaidli_5idli.jpeg'
+import idli_3 from './img/masalaidli.jpeg'
+import idli_4 from './img/kachipuramidli.jpeg'
+import idli_5 from './img/sambharidli.jpeg'
+import idli_6 from './img/friedidli.jpeg'
+import idli_7 from './img/stuffedidli.jpeg'
+import idli_8 from './img/miniidli.jpeg'
+
+
+
+import dosa_1 from './img/masaladosa.jpeg'
+
+
+
+
+
+
+
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -89,59 +141,59 @@ export const menu_list = [
     },
     {
         "menu_name": "Curry",
-        "menu_image": "menu_2"
+        "menu_image": curry
     },
     {
         "menu_name": "Tandoori",
-        "menu_image": "menu_3"
+        "menu_image": Tandoori
     },
     {
         "menu_name": "Paneer",
-        "menu_image": "menu_4"
+        "menu_image":Paneer
     },
     {
         "menu_name": "Dal",
-        "menu_image": "menu_5"
+        "menu_image": Dal
     },
     {
         "menu_name": "Paratha",
-        "menu_image": "menu_6"
+        "menu_image": Paratha
     },
     {
         "menu_name": "Chaat",
-        "menu_image": "menu_7"
+        "menu_image": Chaat
     },
     {
         "menu_name": "Samosa",
-        "menu_image": "menu_8"
+        "menu_image": Samosa
     },
     {
         "menu_name": "Idli",
-        "menu_image": "menu_9"
+        "menu_image": Idli
     },
     {
         "menu_name": "Dosa",
-        "menu_image": "menu_10"
+        "menu_image": Dosa
     },
     {
         "menu_name": "Vada",
-        "menu_image": "menu_11"
+        "menu_image": Vada
     },
     {
         "menu_name": "Pulao",
-        "menu_image": "menu_12"
+        "menu_image": Pulao
     },
     {
         "menu_name": "Raita",
-        "menu_image": "menu_13"
+        "menu_image": Raita
     },
     {
         "menu_name": "Kebab",
-        "menu_image": "menu_14"
+        "menu_image": Kebab
     },
     {
         "menu_name": "Halwa",
-        "menu_image": "menu_15"
+        "menu_image": Halwa
     }
 ]
 
@@ -215,23 +267,39 @@ export const food_list =
     {
         "_id": 9,
         "name": "Kadai Paneer",
-        "image": "food_13",
+        "image": curry_4,
         "price": 119,
         "description": "Kadai Paneer is a spicy dish that captures the essence of Indian cuisine.",
-        "category": "Curry"
+        "category":  "Curry"
     },
     {
         "_id": 10,
         "name": "Malai Kofta",
-        "image": "food_15",
+        "image": curry_2,
         "price": 144,
         "description": "Malai Kofta is a wholesome dish that captures the essence of Indian cuisine.",
-        "category": "Curry"
+        "category":  "Curry"
     },
     {
         "_id": 11,
         "name": "Chana Masala",
-        "image": "food_16",
+        "image": curry_3,
+        "price": 224,
+        "description": "Chana Masala is a wholesome dish that captures the essence of Indian cuisine.",
+        "category":  "Curry"
+    },
+    {
+        "_id": 11,
+        "name": "sahi curry",
+        "image": curry_1,
+        "price": 224,
+        "description": "Chana Masala is a wholesome dish that captures the essence of Indian cuisine.",
+        "category":  "Curry"
+    },
+    {
+        "_id": 11,
+        "name": "Mix curry masala",
+        "image": curry_5,
         "price": 224,
         "description": "Chana Masala is a wholesome dish that captures the essence of Indian cuisine.",
         "category": "Curry"
@@ -239,7 +307,7 @@ export const food_list =
     {
         "_id": 12,
         "name": "Tandoori Paneer",
-        "image": "food_18",
+        "image": tandoori_1,
         "price": 249,
         "description": "Tandoori Paneer is a wholesome dish crafted with fresh vegetables and traditional spices.",
         "category": "Tandoori"
@@ -247,7 +315,7 @@ export const food_list =
     {
         "_id": 13,
         "name": "Tandoori Mushroom",
-        "image": "food_19",
+        "image": tandoori_2,
         "price": 186,
         "description": "Tandoori Mushroom is a flavorful dish made with care for a truly comforting experience.",
         "category": "Tandoori"
@@ -255,7 +323,7 @@ export const food_list =
     {
         "_id": 14,
         "name": "Tandoori Broccoli",
-        "image": "food_23",
+        "image": tandoori_3,
         "price": 132,
         "description": "Tandoori Broccoli is a delectable dish made with care for a truly comforting experience.",
         "category": "Tandoori"
@@ -263,7 +331,7 @@ export const food_list =
     {
         "_id": 15,
         "name": "Tandoori Aloo",
-        "image": "food_24",
+        "image": tandoori_4,
         "price": 125,
         "description": "Tandoori Aloo is a spicy dish prepared to satisfy your vegetarian cravings.",
         "category": "Tandoori"
@@ -271,15 +339,15 @@ export const food_list =
     {
         "_id": 16,
         "name": "Paneer Butter Masala",
-        "image": "food_25",
+        "image": paneer_1,
         "price": 117,
         "description": "Paneer Butter Masala is a hearty dish that captures the essence of Indian cuisine.",
         "category": "Paneer"
     },
     {
         "_id": 17,
-        "name": "Palak Paneer",
-        "image": "food_26",
+        "name": "Palak panner",
+        "image": paneer_4,
         "price": 148,
         "description": "Palak Paneer is a flavorful dish which pairs well with roti, naan, or rice.",
         "category": "Paneer"
@@ -287,23 +355,15 @@ export const food_list =
     {
         "_id": 18,
         "name": "Paneer Tikka",
-        "image": "food_27",
+        "image": paneer_3,
         "price": 117,
         "description": "Paneer Tikka is a spicy dish crafted with fresh vegetables and traditional spices.",
         "category": "Paneer"
     },
     {
-        "_id": 19,
-        "name": "Paneer Do Pyaza",
-        "image": "food_28",
-        "price": 224,
-        "description": "Paneer Do Pyaza is a spicy dish perfect for any meal and loved by all ages.",
-        "category": "Paneer"
-    },
-    {
         "_id": 20,
         "name": "Paneer Bhurji",
-        "image": "food_29",
+        "image": paneer_2,
         "price": 132,
         "description": "Paneer Bhurji is a wholesome dish prepared to satisfy your vegetarian cravings.",
         "category": "Paneer"
@@ -311,7 +371,7 @@ export const food_list =
     {
         "_id": 21,
         "name": "Kadai Paneer",
-        "image": "food_30",
+        "image": paneer_7,
         "price": 193,
         "description": "Kadai Paneer is a mouth-watering dish that captures the essence of Indian cuisine.",
         "category": "Paneer"
@@ -319,23 +379,16 @@ export const food_list =
     {
         "_id": 22,
         "name": "Matar Paneer",
-        "image": "food_31",
+        "image": paneer_6,
         "price": 230,
         "description": "Matar Paneer is a flavorful dish that captures the essence of Indian cuisine.",
         "category": "Paneer"
     },
-    {
-        "_id": 23,
-        "name": "Shahi Paneer",
-        "image": "food_32",
-        "price": 239,
-        "description": "Shahi Paneer is a hearty dish infused with rich flavors and cooked to perfection.",
-        "category": "Paneer"
-    },
+    
     {
         "_id": 24,
         "name": "Dal Makhani",
-        "image": "food_33",
+        "image": dal_1,
         "price": 153,
         "description": "Dal Makhani is a savory dish prepared to satisfy your vegetarian cravings.",
         "category": "Dal"
@@ -343,7 +396,7 @@ export const food_list =
     {
         "_id": 25,
         "name": "Tadka Dal",
-        "image": "food_34",
+        "image":dal_2,
         "price": 243,
         "description": "Tadka Dal is a flavorful dish which pairs well with roti, naan, or rice.",
         "category": "Dal"
@@ -351,7 +404,7 @@ export const food_list =
     {
         "_id": 26,
         "name": "Panchmel Dal",
-        "image": "food_35",
+        "image":dal_7,
         "price": 220,
         "description": "Panchmel Dal is a hearty dish that brings authentic Indian taste to your plate.",
         "category": "Dal"
@@ -359,7 +412,7 @@ export const food_list =
     {
         "_id": 27,
         "name": "Dal Fry",
-        "image": "food_36",
+        "image": dal_5,
         "price": 201,
         "description": "Dal Fry is a wholesome dish that brings authentic Indian taste to your plate.",
         "category": "Dal"
@@ -367,7 +420,7 @@ export const food_list =
     {
         "_id": 28,
         "name": "Chana Dal",
-        "image": "food_37",
+        "image": dal_4,
         "price": 107,
         "description": "Chana Dal is a hearty dish prepared to satisfy your vegetarian cravings.",
         "category": "Dal"
@@ -375,7 +428,7 @@ export const food_list =
     {
         "_id": 29,
         "name": "Moong Dal",
-        "image": "food_38",
+        "image": dal_3,
         "price": 205,
         "description": "Moong Dal is a delectable dish crafted with fresh vegetables and traditional spices.",
         "category": "Dal"
@@ -383,7 +436,7 @@ export const food_list =
     {
         "_id": 30,
         "name": "Masoor Dal",
-        "image": "food_39",
+        "image": dal_6,
         "price": 209,
         "description": "Masoor Dal is a flavorful dish that captures the essence of Indian cuisine.",
         "category": "Dal"
@@ -391,7 +444,7 @@ export const food_list =
     {
         "_id": 31,
         "name": "Dhaba Dal",
-        "image": "food_40",
+        "image": dal_8,
         "price": 178,
         "description": "Dhaba Dal is a savory dish infused with rich flavors and cooked to perfection.",
         "category": "Dal"
@@ -399,7 +452,7 @@ export const food_list =
     {
         "_id": 32,
         "name": "Aloo Paratha",
-        "image": "food_41",
+        "image": paratha_3,
         "price": 147,
         "description": "Aloo Paratha is a hearty dish which pairs well with roti, naan, or rice.",
         "category": "Paratha"
@@ -407,7 +460,7 @@ export const food_list =
     {
         "_id": 33,
         "name": "Gobi Paratha",
-        "image": "food_42",
+        "image":paratha_2,
         "price": 154,
         "description": "Gobi Paratha is a aromatic dish that brings authentic Indian taste to your plate.",
         "category": "Paratha"
@@ -415,7 +468,7 @@ export const food_list =
     {
         "_id": 34,
         "name": "Paneer Paratha",
-        "image": "food_43",
+        "image": paratha_4,
         "price": 239,
         "description": "Paneer Paratha is a wholesome dish perfect for any meal and loved by all ages.",
         "category": "Paratha"
@@ -423,7 +476,7 @@ export const food_list =
     {
         "_id": 35,
         "name": "Methi Paratha",
-        "image": "food_44",
+        "image": paratha_5,
         "price": 203,
         "description": "Methi Paratha is a aromatic dish infused with rich flavors and cooked to perfection.",
         "category": "Paratha"
@@ -431,7 +484,7 @@ export const food_list =
     {
         "_id": 36,
         "name": "Lachha Paratha",
-        "image": "food_45",
+        "image": paratha_6,
         "price": 100,
         "description": "Lachha Paratha is a wholesome dish prepared to satisfy your vegetarian cravings.",
         "category": "Paratha"
@@ -439,31 +492,15 @@ export const food_list =
     {
         "_id": 37,
         "name": "Onion Paratha",
-        "image": "food_46",
+        "image": paratha_7,
         "price": 196,
         "description": "Onion Paratha is a wholesome dish made with care for a truly comforting experience.",
         "category": "Paratha"
     },
     {
-        "_id": 38,
-        "name": "Mix Veg Paratha",
-        "image": "food_47",
-        "price": 114,
-        "description": "Mix Veg Paratha is a flavorful dish which pairs well with roti, naan, or rice.",
-        "category": "Paratha"
-    },
-    {
-        "_id": 39,
-        "name": "Cheese Paratha",
-        "image": "food_48",
-        "price": 120,
-        "description": "Cheese Paratha is a wholesome dish prepared to satisfy your vegetarian cravings.",
-        "category": "Paratha"
-    },
-    {
         "_id": 40,
         "name": "Pani Puri",
-        "image": "food_49",
+        "image": chaat_1,
         "price": 203,
         "description": "Pani Puri is a spicy dish that captures the essence of Indian cuisine.",
         "category": "Chaat"
@@ -471,7 +508,7 @@ export const food_list =
     {
         "_id": 41,
         "name": "Bhel Puri",
-        "image": "food_50",
+        "image": chaat_2,
         "price": 226,
         "description": "Bhel Puri is a hearty dish prepared to satisfy your vegetarian cravings.",
         "category": "Chaat"
@@ -479,7 +516,7 @@ export const food_list =
     {
         "_id": 42,
         "name": "Papdi Chaat",
-        "image": "food_51",
+        "image": chaat_3,
         "price": 189,
         "description": "Papdi Chaat is a spicy dish made with care for a truly comforting experience.",
         "category": "Chaat"
@@ -487,7 +524,7 @@ export const food_list =
     {
         "_id": 43,
         "name": "Dahi Puri",
-        "image": "food_52",
+        "image":chaat_4,
         "price": 131,
         "description": "Dahi Puri is a savory dish perfect for any meal and loved by all ages.",
         "category": "Chaat"
@@ -495,23 +532,15 @@ export const food_list =
     {
         "_id": 44,
         "name": "Aloo Tikki Chaat",
-        "image": "food_53",
+        "image": chaat_5,
         "price": 120,
         "description": "Aloo Tikki Chaat is a savory dish perfect for any meal and loved by all ages.",
         "category": "Chaat"
     },
     {
-        "_id": 45,
-        "name": "Samosa Chaat",
-        "image": "food_54",
-        "price": 124,
-        "description": "Samosa Chaat is a wholesome dish infused with rich flavors and cooked to perfection.",
-        "category": "Chaat"
-    },
-    {
         "_id": 46,
         "name": "Sev Puri",
-        "image": "food_55",
+        "image": chaat_7,
         "price": 107,
         "description": "Sev Puri is a wholesome dish infused with rich flavors and cooked to perfection.",
         "category": "Chaat"
@@ -519,7 +548,7 @@ export const food_list =
     {
         "_id": 47,
         "name": "Raj Kachori",
-        "image": "food_56",
+        "image": chaat_8,
         "price": 177,
         "description": "Raj Kachori is a mouth-watering dish prepared to satisfy your vegetarian cravings.",
         "category": "Chaat"
@@ -527,7 +556,7 @@ export const food_list =
     {
         "_id": 48,
         "name": "Aloo Samosa",
-        "image": "food_57",
+        "image":samosa_1,
         "price": 186,
         "description": "Aloo Samosa is a mouth-watering dish prepared to satisfy your vegetarian cravings.",
         "category": "Samosa"
@@ -535,7 +564,7 @@ export const food_list =
     {
         "_id": 49,
         "name": "Paneer Samosa",
-        "image": "food_58",
+        "image": samosa_2,
         "price": 241,
         "description": "Paneer Samosa is a delectable dish which pairs well with roti, naan, or rice.",
         "category": "Samosa"
@@ -543,7 +572,7 @@ export const food_list =
     {
         "_id": 50,
         "name": "Keema Samosa",
-        "image": "food_59",
+        "image": samosa_3,
         "price": 149,
         "description": "Keema Samosa is a wholesome dish infused with rich flavors and cooked to perfection.",
         "category": "Samosa"
@@ -551,7 +580,7 @@ export const food_list =
     {
         "_id": 51,
         "name": "Corn Samosa",
-        "image": "food_60",
+        "image": samosa_4,
         "price": 199,
         "description": "Corn Samosa is a aromatic dish infused with rich flavors and cooked to perfection.",
         "category": "Samosa"
@@ -559,7 +588,7 @@ export const food_list =
     {
         "_id": 52,
         "name": "Veg Samosa",
-        "image": "food_63",
+        "image": samosa_5,
         "price": 110,
         "description": "Veg Samosa is a mouth-watering dish that captures the essence of Indian cuisine.",
         "category": "Samosa"
@@ -567,7 +596,7 @@ export const food_list =
     {
         "_id": 53,
         "name": "Cheese Samosa",
-        "image": "food_64",
+        "image": samosa_6,
         "price": 167,
         "description": "Cheese Samosa is a flavorful dish that brings authentic Indian taste to your plate.",
         "category": "Samosa"
@@ -575,7 +604,7 @@ export const food_list =
     {
         "_id": 54,
         "name": "Plain Idli",
-        "image": "food_65",
+        "image": idli_1,
         "price": 118,
         "description": "Plain Idli is a aromatic dish prepared to satisfy your vegetarian cravings.",
         "category": "Idli"
@@ -583,7 +612,7 @@ export const food_list =
     {
         "_id": 55,
         "name": "Rava Idli",
-        "image": "food_66",
+        "image": idli_2,
         "price": 121,
         "description": "Rava Idli is a spicy dish that brings authentic Indian taste to your plate.",
         "category": "Idli"
@@ -591,7 +620,7 @@ export const food_list =
     {
         "_id": 56,
         "name": "Masala Idli",
-        "image": "food_67",
+        "image": idli_3,
         "price": 159,
         "description": "Masala Idli is a savory dish that brings authentic Indian taste to your plate.",
         "category": "Idli"
@@ -599,7 +628,7 @@ export const food_list =
     {
         "_id": 57,
         "name": "Kanchipuram Idli",
-        "image": "food_68",
+        "image": idli_4,
         "price": 166,
         "description": "Kanchipuram Idli is a hearty dish perfect for any meal and loved by all ages.",
         "category": "Idli"
@@ -607,7 +636,7 @@ export const food_list =
     {
         "_id": 58,
         "name": "Sambar Idli",
-        "image": "food_69",
+        "image": idli_5,
         "price": 238,
         "description": "Sambar Idli is a delectable dish crafted with fresh vegetables and traditional spices.",
         "category": "Idli"
@@ -615,7 +644,7 @@ export const food_list =
     {
         "_id": 59,
         "name": "Fried Idli",
-        "image": "food_70",
+        "image":idli_6,
         "price": 213,
         "description": "Fried Idli is a spicy dish that brings authentic Indian taste to your plate.",
         "category": "Idli"
@@ -623,7 +652,7 @@ export const food_list =
     {
         "_id": 60,
         "name": "Stuffed Idli",
-        "image": "food_71",
+        "image": idli_7,
         "price": 158,
         "description": "Stuffed Idli is a aromatic dish perfect for any meal and loved by all ages.",
         "category": "Idli"
@@ -631,7 +660,7 @@ export const food_list =
     {
         "_id": 61,
         "name": "Mini Idli",
-        "image": "food_72",
+        "image": idli_8,
         "price": 128,
         "description": "Mini Idli is a wholesome dish which pairs well with roti, naan, or rice.",
         "category": "Idli"
@@ -979,134 +1008,5 @@ export const food_list =
         "price": 200,
         "description": "Milk Halwa is a delectable dish infused with rich flavors and cooked to perfection.",
         "category": "Halwa"
-    },
-    {
-        "_id": 105,
-        "name": "Hyderabadi Biryani",
-        "image": "food_1",
-        "price": 205,
-        "description": "Hyderabadi Biryani is a aromatic dish made with care for a truly comforting experience.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 106,
-        "name": "Lucknowi Biryani",
-        "image": "food_2",
-        "price": 147,
-        "description": "Lucknowi Biryani is a aromatic dish made with care for a truly comforting experience.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 107,
-        "name": "Kolkata Biryani",
-        "image": "food_3",
-        "price": 213,
-        "description": "Kolkata Biryani is a aromatic dish perfect for any meal and loved by all ages.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 108,
-        "name": "Dindigul Biryani",
-        "image": "food_4",
-        "price": 235,
-        "description": "Dindigul Biryani is a delectable dish made with care for a truly comforting experience.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 109,
-        "name": "Ambur Biryani",
-        "image": "food_5",
-        "price": 104,
-        "description": "Ambur Biryani is a wholesome dish crafted with fresh vegetables and traditional spices.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 110,
-        "name": "Sindhi Biryani",
-        "image": "food_6",
-        "price": 152,
-        "description": "Sindhi Biryani is a spicy dish prepared to satisfy your vegetarian cravings.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 111,
-        "name": "Mughlai Biryani",
-        "image": "food_7",
-        "price": 248,
-        "description": "Mughlai Biryani is a mouth-watering dish that captures the essence of Indian cuisine.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 112,
-        "name": "Kashmiri Biryani",
-        "image": "food_8",
-        "price": 118,
-        "description": "Kashmiri Biryani is a flavorful dish prepared to satisfy your vegetarian cravings.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 113,
-        "name": "Kadai Paneer",
-        "image": "food_13",
-        "price": 119,
-        "description": "Kadai Paneer is a aromatic dish made with care for a truly comforting experience.",
-        "category": "Curry"
-    },
-    {
-        "_id": 114,
-        "name": "Malai Kofta",
-        "image": "food_15",
-        "price": 144,
-        "description": "Malai Kofta is a flavorful dish prepared to satisfy your vegetarian cravings.",
-        "category": "Curry"
-    },
-    {
-        "_id": 115,
-        "name": "Chana Masala",
-        "image": "food_16",
-        "price": 224,
-        "description": "Chana Masala is a hearty dish crafted with fresh vegetables and traditional spices.",
-        "category": "Curry"
-    },
-    {
-        "_id": 116,
-        "name": "Tandoori Paneer",
-        "image": "food_18",
-        "price": 249,
-        "description": "Tandoori Paneer is a flavorful dish infused with rich flavors and cooked to perfection.",
-        "category": "Tandoori"
-    },
-    {
-        "_id": 117,
-        "name": "Tandoori Mushroom",
-        "image": "food_19",
-        "price": 186,
-        "description": "Tandoori Mushroom is a flavorful dish which pairs well with roti, naan, or rice.",
-        "category": "Tandoori"
-    },
-    {
-        "_id": 118,
-        "name": "Tandoori Broccoli",
-        "image": "food_23",
-        "price": 132,
-        "description": "Tandoori Broccoli is a hearty dish infused with rich flavors and cooked to perfection.",
-        "category": "Tandoori"
-    },
-    {
-        "_id": 119,
-        "name": "Tandoori Aloo",
-        "image": "food_24",
-        "price": 125,
-        "description": "Tandoori Aloo is a delectable dish infused with rich flavors and cooked to perfection.",
-        "category": "Tandoori"
-    },
-    {
-        "_id": 120,
-        "name": "Paneer Butter Masala",
-        "image": "food_25",
-        "price": 117,
-        "description": "Paneer Butter Masala is a spicy dish that brings authentic Indian taste to your plate.",
-        "category": "Paneer"
-    }
-
+    } 
 ]
