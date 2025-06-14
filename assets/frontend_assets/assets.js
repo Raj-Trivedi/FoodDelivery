@@ -3,48 +3,39 @@ import logo from './logo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 
-import menu_1 from './menu_1.png'
-
-
-import curry from './img/curry.jpeg'
-import Tandoori from './img/tandoori1.jpeg'
-import Paneer from './img/paneer.jpeg'
-import Dal from './img/dal.jpeg'
-import Paratha from './img/methiparatha.jpeg'
-import Chaat from './img/sevpuri.jpeg'
-import Samosa from './img/keemasamosa.jpeg'
-// import Samosa from './img/keemasamosa.jpeg'
-import Idli from './img/plainidle.jpg'
-import Dosa from './img/mysoredosa.jpg'
-
-
-
-import Vada from './img/vada.jpeg'
-import Pulao from './img/pulao.jpeg'
-import Raita from './img/raita.jpeg'
-import Kebab from './img/kebab.jpeg'
-import Halwa from './img/halwa.jpeg'
 
 
 
 
 
+
+
+
+
+
+import biryani_1 from './img/biryani1.jpeg'
+import biryani_2 from './img/biryani2.jpeg'
+import biryani_3 from './img/biryani3.jpeg'
+import biryani_4 from './img/biryani4.jpeg'
 
 import curry_1 from './img/curry1.jpeg'
 import curry_2 from './img/curry2.jpeg'
 import curry_3 from './img/curry3.jpeg'
 import curry_4 from './img/curry4.jpeg'
 import curry_5 from './img/curry.jpeg'
+
 import tandoori_1 from './img/tandoori1.jpeg'
 import tandoori_2 from './img/tandoori2.jpeg'
 import tandoori_3 from './img/tandoori1 brooli.jpeg'
 import tandoori_4 from './img/tandoori1 aloo.jpeg'
+
 import paneer_1 from './img/paneer1.jpeg'
 import paneer_2 from './img/paneer2.jpeg'
 import paneer_3 from './img/paneer3.jpeg'
 import paneer_4 from './img/paneer4.jpeg'
 import paneer_6 from './img/paneer6.jpeg'
 import paneer_7 from './img/paneer7.jpeg'
+
 import dal_1 from './img/dal.jpeg'
 import dal_2 from './img/dal2.jpeg'
 import dal_3 from './img/dal3.jpeg'
@@ -85,9 +76,45 @@ import idli_6 from './img/friedidli.jpeg'
 import idli_7 from './img/stuffedidli.jpeg'
 import idli_8 from './img/miniidli.jpeg'
 
-
-
 import dosa_1 from './img/masaladosa.jpeg'
+import dosa_2 from './img/plaindosa.jpeg'
+import dosa_3 from './img/ravadosa.jpeg'
+import dosa_4 from './img/oniondosa.jpeg'
+import dosa_5 from './img/mysoredosa.jpg'
+
+import vada_1 from './img/vada1.jpeg'
+import vada_2 from './img/vada2.jpeg'
+import vada_3 from './img/vada3.jpeg'
+import vada_4 from './img/vada4.jpeg'
+import vada_5 from './img/vada5.jpeg'
+import vada_6 from './img/vada6.jpeg'
+
+import Pulao_1 from './img/pulau1.jpeg'
+import Pulao_2 from './img/pulau2.jpeg'
+import Pulao_3 from './img/pulau3.jpeg'
+import Pulao_4 from './img/pulau4.jpeg'
+
+import raita_1 from './img/raita1.jpeg'
+import raita_2 from './img/raita2.jpeg'
+import raita_3 from './img/raita3.jpeg'
+import raita_4 from './img/raita4.jpeg'
+
+import Kebab_1 from './img/kebab1.jpeg'
+import Kebab_2 from './img/kebab2.jpeg'
+import Kebab_3 from './img/kebab3.jpeg'
+import Kebab_4 from './img/kabeb4.jpeg'
+import Kebab_5 from './img/kabeb5.jpeg'
+
+import halwa_1 from './img/halwa1.jpeg'
+import halwa_2 from './img/halwa2.jpeg'
+import halwa_3 from './img/halwa3.jpeg'
+import halwa_4 from './img/halwa4.jpeg'
+import halwa_5 from './img/halwa5.jpeg'
+
+
+
+
+
 
 
 
@@ -141,59 +168,59 @@ export const menu_list = [
     },
     {
         "menu_name": "Curry",
-        "menu_image": curry
+        "menu_image": curry_1
     },
     {
         "menu_name": "Tandoori",
-        "menu_image": Tandoori
+        "menu_image": tandoori_1
     },
     {
         "menu_name": "Paneer",
-        "menu_image":Paneer
+        "menu_image":paneer_1
     },
     {
         "menu_name": "Dal",
-        "menu_image": Dal
+        "menu_image": dal_1
     },
     {
         "menu_name": "Paratha",
-        "menu_image": Paratha
+        "menu_image": paratha_2
     },
     {
         "menu_name": "Chaat",
-        "menu_image": Chaat
+        "menu_image": chaat_1
     },
     {
         "menu_name": "Samosa",
-        "menu_image": Samosa
+        "menu_image": samosa_1
     },
     {
         "menu_name": "Idli",
-        "menu_image": Idli
+        "menu_image": idli_1
     },
     {
         "menu_name": "Dosa",
-        "menu_image": Dosa
+        "menu_image": dosa_1
     },
     {
         "menu_name": "Vada",
-        "menu_image": Vada
+        "menu_image": vada_1
     },
     {
         "menu_name": "Pulao",
-        "menu_image": Pulao
+        "menu_image": Pulao_1
     },
     {
         "menu_name": "Raita",
-        "menu_image": Raita
+        "menu_image": raita_1
     },
     {
         "menu_name": "Kebab",
-        "menu_image": Kebab
+        "menu_image": Kebab_1
     },
     {
         "menu_name": "Halwa",
-        "menu_image": Halwa
+        "menu_image": halwa_1
     }
 ]
 
@@ -203,7 +230,7 @@ export const food_list =
     {
         "_id": 1,
         "name": "Hyderabadi Biryani",
-        "image": "food_1",
+        "image": biryani_1,
         "price": 205,
         "description": "Hyderabadi Biryani is a savory dish that captures the essence of Indian cuisine.",
         "category": "Biryani"
@@ -211,7 +238,7 @@ export const food_list =
     {
         "_id": 2,
         "name": "Lucknowi Biryani",
-        "image": "food_2",
+        "image": biryani_2,
         "price": 147,
         "description": "Lucknowi Biryani is a spicy dish made with care for a truly comforting experience.",
         "category": "Biryani"
@@ -219,47 +246,15 @@ export const food_list =
     {
         "_id": 3,
         "name": "Kolkata Biryani",
-        "image": "food_3",
+        "image": biryani_3,
         "price": 213,
         "description": "Kolkata Biryani is a spicy dish that captures the essence of Indian cuisine.",
         "category": "Biryani"
     },
     {
-        "_id": 4,
-        "name": "Dindigul Biryani",
-        "image": "food_4",
-        "price": 235,
-        "description": "Dindigul Biryani is a wholesome dish perfect for any meal and loved by all ages.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 5,
-        "name": "Ambur Biryani",
-        "image": "food_5",
-        "price": 104,
-        "description": "Ambur Biryani is a hearty dish prepared to satisfy your vegetarian cravings.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 6,
-        "name": "Sindhi Biryani",
-        "image": "food_6",
-        "price": 152,
-        "description": "Sindhi Biryani is a hearty dish perfect for any meal and loved by all ages.",
-        "category": "Biryani"
-    },
-    {
-        "_id": 7,
-        "name": "Mughlai Biryani",
-        "image": "food_7",
-        "price": 248,
-        "description": "Mughlai Biryani is a spicy dish crafted with fresh vegetables and traditional spices.",
-        "category": "Biryani"
-    },
-    {
         "_id": 8,
         "name": "Kashmiri Biryani",
-        "image": "food_8",
+        "image": biryani_4,
         "price": 118,
         "description": "Kashmiri Biryani is a hearty dish that captures the essence of Indian cuisine.",
         "category": "Biryani"
@@ -668,7 +663,7 @@ export const food_list =
     {
         "_id": 62,
         "name": "Masala Dosa",
-        "image": "food_73",
+        "image": dosa_1,
         "price": 151,
         "description": "Masala Dosa is a hearty dish made with care for a truly comforting experience.",
         "category": "Dosa"
@@ -676,7 +671,7 @@ export const food_list =
     {
         "_id": 63,
         "name": "Plain Dosa",
-        "image": "food_74",
+        "image": dosa_2,
         "price": 147,
         "description": "Plain Dosa is a flavorful dish perfect for any meal and loved by all ages.",
         "category": "Dosa"
@@ -684,7 +679,7 @@ export const food_list =
     {
         "_id": 64,
         "name": "Rava Dosa",
-        "image": "food_75",
+        "image":dosa_3,
         "price": 247,
         "description": "Rava Dosa is a wholesome dish crafted with fresh vegetables and traditional spices.",
         "category": "Dosa"
@@ -692,55 +687,31 @@ export const food_list =
     {
         "_id": 65,
         "name": "Onion Dosa",
-        "image": "food_76",
+        "image": dosa_4,
         "price": 193,
         "description": "Onion Dosa is a mouth-watering dish that captures the essence of Indian cuisine.",
         "category": "Dosa"
     },
     {
         "_id": 66,
-        "name": "Mysore Masala Dosa",
+        "name": dosa_5,
         "image": "food_77",
         "price": 192,
         "description": "Mysore Masala Dosa is a aromatic dish made with care for a truly comforting experience.",
         "category": "Dosa"
     },
     {
-        "_id": 67,
-        "name": "Paper Dosa",
-        "image": "food_78",
-        "price": 209,
-        "description": "Paper Dosa is a savory dish crafted with fresh vegetables and traditional spices.",
-        "category": "Dosa"
-    },
-    {
-        "_id": 68,
-        "name": "Set Dosa",
-        "image": "food_79",
-        "price": 216,
-        "description": "Set Dosa is a hearty dish prepared to satisfy your vegetarian cravings.",
-        "category": "Dosa"
-    },
-    {
-        "_id": 69,
-        "name": "Cheese Dosa",
-        "image": "food_80",
-        "price": 173,
-        "description": "Cheese Dosa is a flavorful dish crafted with fresh vegetables and traditional spices.",
-        "category": "Dosa"
-    },
-    {
         "_id": 70,
         "name": "Medu Vada",
-        "image": "food_81",
+        "image": vada_1,
         "price": 223,
         "description": "Medu Vada is a wholesome dish that captures the essence of Indian cuisine.",
         "category": "Vada"
     },
     {
         "_id": 71,
-        "name": "Masala Vada",
-        "image": "food_82",
+        "name":"Masala Vada",
+        "image": vada_2,
         "price": 131,
         "description": "Masala Vada is a aromatic dish prepared to satisfy your vegetarian cravings.",
         "category": "Vada"
@@ -748,7 +719,7 @@ export const food_list =
     {
         "_id": 72,
         "name": "Sabudana Vada",
-        "image": "food_83",
+        "image":vada_6,
         "price": 182,
         "description": "Sabudana Vada is a aromatic dish perfect for any meal and loved by all ages.",
         "category": "Vada"
@@ -756,7 +727,7 @@ export const food_list =
     {
         "_id": 73,
         "name": "Dal Vada",
-        "image": "food_84",
+        "image": vada_3,
         "price": 208,
         "description": "Dal Vada is a hearty dish infused with rich flavors and cooked to perfection.",
         "category": "Vada"
@@ -764,39 +735,23 @@ export const food_list =
     {
         "_id": 74,
         "name": "Batata Vada",
-        "image": "food_85",
+        "image":vada_5,
         "price": 247,
         "description": "Batata Vada is a hearty dish that brings authentic Indian taste to your plate.",
         "category": "Vada"
     },
     {
-        "_id": 75,
-        "name": "Cabbage Vada",
-        "image": "food_86",
-        "price": 250,
-        "description": "Cabbage Vada is a spicy dish which pairs well with roti, naan, or rice.",
-        "category": "Vada"
-    },
-    {
         "_id": 76,
         "name": "Curd Vada",
-        "image": "food_87",
+        "image": vada_4,
         "price": 245,
         "description": "Curd Vada is a aromatic dish perfect for any meal and loved by all ages.",
         "category": "Vada"
     },
     {
-        "_id": 77,
-        "name": "Sambar Vada",
-        "image": "food_88",
-        "price": 181,
-        "description": "Sambar Vada is a delectable dish crafted with fresh vegetables and traditional spices.",
-        "category": "Vada"
-    },
-    {
         "_id": 78,
         "name": "Veg Pulao",
-        "image": "food_89",
+        "image": Pulao_1,
         "price": 173,
         "description": "Veg Pulao is a savory dish that brings authentic Indian taste to your plate.",
         "category": "Pulao"
@@ -804,7 +759,7 @@ export const food_list =
     {
         "_id": 79,
         "name": "Peas Pulao",
-        "image": "food_90",
+        "image": Pulao_2,
         "price": 111,
         "description": "Peas Pulao is a savory dish prepared to satisfy your vegetarian cravings.",
         "category": "Pulao"
@@ -812,7 +767,7 @@ export const food_list =
     {
         "_id": 80,
         "name": "Jeera Rice",
-        "image": "food_91",
+        "image": Pulao_3,
         "price": 221,
         "description": "Jeera Rice is a flavorful dish which pairs well with roti, naan, or rice.",
         "category": "Pulao"
@@ -820,47 +775,23 @@ export const food_list =
     {
         "_id": 81,
         "name": "Kashmiri Pulao",
-        "image": "food_92",
+        "image": Pulao_4,
         "price": 114,
         "description": "Kashmiri Pulao is a aromatic dish infused with rich flavors and cooked to perfection.",
         "category": "Pulao"
     },
     {
-        "_id": 82,
-        "name": "Mushroom Pulao",
-        "image": "food_93",
-        "price": 205,
-        "description": "Mushroom Pulao is a wholesome dish made with care for a truly comforting experience.",
-        "category": "Pulao"
-    },
-    {
-        "_id": 83,
-        "name": "Paneer Pulao",
-        "image": "food_94",
-        "price": 240,
-        "description": "Paneer Pulao is a hearty dish prepared to satisfy your vegetarian cravings.",
-        "category": "Pulao"
-    },
-    {
         "_id": 84,
         "name": "Boondi Raita",
-        "image": "food_97",
+        "image": raita_1,
         "price": 242,
         "description": "Boondi Raita is a flavorful dish crafted with fresh vegetables and traditional spices.",
         "category": "Raita"
     },
     {
-        "_id": 85,
-        "name": "Pineapple Raita",
-        "image": "food_98",
-        "price": 233,
-        "description": "Pineapple Raita is a aromatic dish prepared to satisfy your vegetarian cravings.",
-        "category": "Raita"
-    },
-    {
         "_id": 86,
         "name": "Mint Raita",
-        "image": "food_99",
+        "image":raita_4,
         "price": 105,
         "description": "Mint Raita is a flavorful dish infused with rich flavors and cooked to perfection.",
         "category": "Raita"
@@ -868,39 +799,15 @@ export const food_list =
     {
         "_id": 87,
         "name": "Onion Raita",
-        "image": "food_100",
+        "image": raita_2,
         "price": 187,
         "description": "Onion Raita is a spicy dish perfect for any meal and loved by all ages.",
         "category": "Raita"
     },
     {
-        "_id": 88,
-        "name": "Cucumber Raita",
-        "image": "food_101",
-        "price": 136,
-        "description": "Cucumber Raita is a mouth-watering dish crafted with fresh vegetables and traditional spices.",
-        "category": "Raita"
-    },
-    {
-        "_id": 89,
-        "name": "Carrot Raita",
-        "image": "food_102",
-        "price": 211,
-        "description": "Carrot Raita is a aromatic dish crafted with fresh vegetables and traditional spices.",
-        "category": "Raita"
-    },
-    {
-        "_id": 90,
-        "name": "Beetroot Raita",
-        "image": "food_103",
-        "price": 249,
-        "description": "Beetroot Raita is a aromatic dish made with care for a truly comforting experience.",
-        "category": "Raita"
-    },
-    {
         "_id": 91,
         "name": "Mixed Veg Raita",
-        "image": "food_104",
+        "image": raita_3,
         "price": 215,
         "description": "Mixed Veg Raita is a flavorful dish which pairs well with roti, naan, or rice.",
         "category": "Raita"
@@ -908,7 +815,7 @@ export const food_list =
     {
         "_id": 92,
         "name": "Seekh Kebab",
-        "image": "food_105",
+        "image":Kebab_1,
         "price": 115,
         "description": "Seekh Kebab is a delectable dish infused with rich flavors and cooked to perfection.",
         "category": "Kebab"
@@ -916,7 +823,7 @@ export const food_list =
     {
         "_id": 93,
         "name": "Hara Bhara Kebab",
-        "image": "food_106",
+        "image": Kebab_2,
         "price": 106,
         "description": "Hara Bhara Kebab is a flavorful dish prepared to satisfy your vegetarian cravings.",
         "category": "Kebab"
@@ -924,7 +831,7 @@ export const food_list =
     {
         "_id": 94,
         "name": "Galouti Kebab",
-        "image": "food_107",
+        "image": Kebab_3,
         "price": 177,
         "description": "Galouti Kebab is a savory dish crafted with fresh vegetables and traditional spices.",
         "category": "Kebab"
@@ -932,7 +839,7 @@ export const food_list =
     {
         "_id": 95,
         "name": "Shami Kebab",
-        "image": "food_108",
+        "image": Kebab_4,
         "price": 170,
         "description": "Shami Kebab is a aromatic dish that captures the essence of Indian cuisine.",
         "category": "Kebab"
@@ -940,7 +847,7 @@ export const food_list =
     {
         "_id": 96,
         "name": "Paneer Kebab",
-        "image": "food_111",
+        "image": Kebab_5,
         "price": 247,
         "description": "Paneer Kebab is a aromatic dish crafted with fresh vegetables and traditional spices.",
         "category": "Kebab"
@@ -948,7 +855,7 @@ export const food_list =
     {
         "_id": 97,
         "name": "Gajar Halwa",
-        "image": "food_113",
+        "image": halwa_1,
         "price": 184,
         "description": "Gajar Halwa is a spicy dish prepared to satisfy your vegetarian cravings.",
         "category": "Halwa"
@@ -956,23 +863,15 @@ export const food_list =
     {
         "_id": 98,
         "name": "Suji Halwa",
-        "image": "food_114",
+        "image": halwa_3,
         "price": 235,
         "description": "Suji Halwa is a flavorful dish made with care for a truly comforting experience.",
         "category": "Halwa"
     },
     {
-        "_id": 99,
-        "name": "Moong Dal Halwa",
-        "image": "food_115",
-        "price": 136,
-        "description": "Moong Dal Halwa is a wholesome dish which pairs well with roti, naan, or rice.",
-        "category": "Halwa"
-    },
-    {
         "_id": 100,
         "name": "Badam Halwa",
-        "image": "food_116",
+        "image": halwa_5,
         "price": 192,
         "description": "Badam Halwa is a spicy dish which pairs well with roti, naan, or rice.",
         "category": "Halwa"
@@ -980,7 +879,7 @@ export const food_list =
     {
         "_id": 101,
         "name": "Atte Ka Halwa",
-        "image": "food_117",
+        "image":halwa_4,
         "price": 202,
         "description": "Atte Ka Halwa is a aromatic dish that captures the essence of Indian cuisine.",
         "category": "Halwa"
@@ -988,25 +887,9 @@ export const food_list =
     {
         "_id": 102,
         "name": "Besan Halwa",
-        "image": "food_118",
+        "image":halwa_2,
         "price": 244,
         "description": "Besan Halwa is a hearty dish made with care for a truly comforting experience.",
         "category": "Halwa"
-    },
-    {
-        "_id": 103,
-        "name": "Pumpkin Halwa",
-        "image": "food_119",
-        "price": 225,
-        "description": "Pumpkin Halwa is a savory dish crafted with fresh vegetables and traditional spices.",
-        "category": "Halwa"
-    },
-    {
-        "_id": 104,
-        "name": "Milk Halwa",
-        "image": "food_120",
-        "price": 200,
-        "description": "Milk Halwa is a delectable dish infused with rich flavors and cooked to perfection.",
-        "category": "Halwa"
-    } 
+    }
 ]
