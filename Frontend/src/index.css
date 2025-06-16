@@ -2,6 +2,18 @@
 *{
   padding: 0px;
   margin:0px;
-  font-family: outfit;
+  /* font-family: outfit; */
 
 }
+.app{
+  width: 80%;
+  margin: auto;
+}
+
+body{
+  min-height: 100vh;
+}
+
+
+
+

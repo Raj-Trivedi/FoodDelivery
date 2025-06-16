@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Satisfy&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Satisfy&display=swap'); */
+
+.header-container {
+   font-family: 'Satisfy', cursive;
+   /* font-family: pacifico, cursive; */
+
+ 
+  height: 40vw; /* makes it fill the entire viewport height */
+ 
+  background: url('../../../public/snapedit_1750064573864\ \(1\).jpg');
+  background-size: cover;     /* scales image to cover the container fully */
+  background-repeat: no-repeat;
+  color: white;
+  margin:10px auto;
+  position: relative;
+  border-radius: 2vw;
+     
+}
+.header-contains{
+     /* max-width: 600px; */
+     padding: 30px;
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     align-items: start;
+     gap:1.5vw;
+     max-width: 50%;
+     bottom: 10%;
+     left: 4vw;
+
+
+}
+.header-contains h1{
+     font-weight: 500;
+     font-size: max(4vw,22px);
+}
+.header-contains p{
+     font-size: 1.4vw;
+}
+/* .header-contains button{
+     background: white;
+    border-radius: 3vw;
+    padding:0.8vw 1.2vw;
+     font-size: max(1.2vw,13px);
+     border:none;
+     color: rgb(139, 39, 32);
+
+} */
+/* From Uiverse.io by vinodjangid07 */ 
+.button {
+  width: 180px;
+  height: 40px;
+  background-image: linear-gradient(rgb(231, 74, 74), rgb(131, 29, 29));
+  border: none;
+  border-radius: 50px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 1px 3px 0px rgb(196, 78, 78);
+  transition-duration: .3s;
+}
+
+.cartIcon {
+  width: 14px;
+  height: fit-content;
+}
+
+.cartIcon path {
+  fill: white;
+}
+
+.button:active {
+  transform: translate(2px ,0px);
+  box-shadow: 0px 1px 0px rgb(139, 113, 255);
+  padding-bottom: 1px;
+}
