@@ -6,6 +6,21 @@ import search_icon from './search_icon.png'
 
 
 
+import biryani from"./img/biryani1-fotor-20250618122029.png"
+import curry from "./img/curry1-fotor-20250618122346.png"
+import tandoori from "./img/tandoori1-fotor-20250618122417.png"
+import paneer from "./img/paneer1-fotor-20250618122441.png"
+import dal from "./img/dal-fotor-20250618122513.png"
+import paratha from "./img/gobi paratha-fotor-2025061812263.png"
+import chaat from "./img/panipuri-fotor-20250618122628.png"
+import samosa from "./img/aloosamosa-fotor-20250618122814.png"
+import idli from "./img/plainidle-fotor-2025061812391 copy.png"
+import dosa from "./img/masaladosa-fotor-20250618122751.png"
+import vada from "./img/vada1-fotor-20250618122258.png"
+import Pulao from "./img/pulau1-fotor-20250618123941.png"
+import raita from "./img/raita1-fotor-2025061812215.png"
+import Kebab from "./img/kebab1-fotor-20250618122144.png"
+import halwa from "./img/halwa1-fotor-20250618122125.png"
 
 
 
@@ -68,7 +83,7 @@ import samosa_5 from './img/vegsamosa.jpeg'
 import samosa_6 from './img/cheesesamosa.jpeg'
 
 import idli_1 from './img/plainidle.jpg'
-import idli_2 from './img/ravaidli_5idli.jpeg'
+import idli_2 from './img/ravaidli.jpeg'
 import idli_3 from './img/masalaidli.jpeg'
 import idli_4 from './img/kachipuramidli.jpeg'
 import idli_5 from './img/sambharidli.jpeg'
@@ -164,64 +179,66 @@ export const assets = {
 export const menu_list = [
     {
         "menu_name": "Biryani",
-        "menu_image": "menu_1"
-    },
-    {
-        "menu_name": "Curry",
-        "menu_image": curry_1
+        "menu_image": biryani
     },
     {
         "menu_name": "Tandoori",
-        "menu_image": tandoori_1
+        "menu_image": tandoori
     },
-    {
-        "menu_name": "Paneer",
-        "menu_image":paneer_1
-    },
-    {
-        "menu_name": "Dal",
-        "menu_image": dal_1
-    },
+    
     {
         "menu_name": "Paratha",
-        "menu_image": paratha_2
+        "menu_image": paratha
     },
     {
         "menu_name": "Chaat",
-        "menu_image": chaat_1
+        "menu_image": chaat
     },
     {
         "menu_name": "Samosa",
-        "menu_image": samosa_1
+        "menu_image": samosa
     },
     {
         "menu_name": "Idli",
-        "menu_image": idli_1
+        "menu_image": idli
     },
     {
         "menu_name": "Dosa",
-        "menu_image": dosa_1
+        "menu_image": dosa
     },
     {
         "menu_name": "Vada",
-        "menu_image": vada_1
+        "menu_image": vada
     },
     {
         "menu_name": "Pulao",
-        "menu_image": Pulao_1
+        "menu_image": Pulao
     },
     {
         "menu_name": "Raita",
-        "menu_image": raita_1
+        "menu_image": raita
     },
     {
         "menu_name": "Kebab",
-        "menu_image": Kebab_1
+        "menu_image": Kebab
     },
     {
         "menu_name": "Halwa",
-        "menu_image": halwa_1
-    }
+        "menu_image": halwa
+    },
+    {
+        "menu_name": "Curry",
+        "menu_image": curry
+    },
+    
+    {
+        "menu_name": "Dal",
+        "menu_image": dal
+    },
+    {
+        "menu_name": "Paneer",
+        "menu_image":paneer
+    },
 ]
 
 

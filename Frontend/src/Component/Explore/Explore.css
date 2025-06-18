@@ -1,0 +1,90 @@
+.Explore-menu{
+    padding:10px;
+    margin-top: 5vw;
+   /* text-align: center; */
+   /* display: flex;
+    flex-direction: column;
+    gap:20px; */
+}
+.Explore-menu p{ 
+    font-size: 1.4vw;
+    margin-top: 1vw;
+    /* font-weight: 600; */
+}
+.Explore-menu-items{
+    display: flex;
+    gap:40px;
+    margin-top: 2vw;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    overflow-x: scroll;
+    padding:10px;
+  
+    cursor: pointer;
+     scroll-behavior: smooth; 
+
+}
+
+
+.Explore-menu-item img{
+    border-radius: 50%;
+    max-width:12vw;
+    /* max-height: 20vw; */
+}
+
+.Explore-menu-item p{
+    font-weight: 700;
+    font-size: 16px;
+}
+.Explore-menu-items::-webkit-scrollbar{
+   display: none;
+}
+/* Wrap container: relative to position arrows */
+.Explore-slider-container {
+  position: relative;
+  
+}
+.Active{
+  padding:1px;
+  border :2px rgb(209, 155, 54) solid;
+
+}
+
+/* Arrows */
+.slider-button {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  border: none;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  width: 35px;
+  height: 35px;
+ 
+  cursor: pointer;
+  z-index: 1;
+}
+
+.slider-button.left {
+  left: 10px;
+}
+
+.slider-button.right {
+  right: 10px;
+}
+
+/* Optional: hide on small screens
+@media (max-width: 768px) {
+  .slider-button {
+    display: none;
+  }
+} */
+
+hr{
+  margin: 40px 0;
+  border: none;
+  height:0.2vw;
+  background-color: rgb(216, 216, 216);
+}
