@@ -15,7 +15,7 @@ const Login = () => {
         className='login-logo' src={logo} alt="" />
        
         <div className="login-detail">
-          <h1>Welcome Back</h1>
+          <h1>Welcome Back </h1>
           <p className='filldetail'>Please enter your details</p>
           <form className='login-form'>
             <div className="input-box">
