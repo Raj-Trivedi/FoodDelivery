@@ -4,7 +4,7 @@ import "./Explore.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const Explore = ({Category,setCategory}) => {
+const Explore = ({category,setCategory}) => {
 
   const scrollRef = useRef(null);
 
@@ -33,7 +33,7 @@ const Explore = ({Category,setCategory}) => {
           {menu_list.map((item, index) => (
             <div key={index}  onClick={()=> setCategory((prev)=> prev === item.menu_name ? 'All' : item.menu_name)}
             className="Explore-menu-item">
-              <img className={(Category === item.menu_name)?"Active Explore-menu-item":"Explore-menu-item"} src={item.menu_image} alt="" />
+              <img className={(category === item.menu_name)?"Active Explore-menu-item":"Explore-menu-item"} src={item.menu_image} alt="" />
               <p>{item.menu_name}</p>
             </div>
           ))}

@@ -6,19 +6,26 @@ import FoodItem from '../FoodItem/FoodItem.jsx';
 const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
 
-  // Define the specific indices you want
   const selectedIndices = [1, 6, 12, 18, 22, 27, 33, 38, 41, 49];
+  const selectedItems = selectedIndices.map(index => food_list[index])
 
-  // Filter food_list to only those items
-  const selectedItems = selectedIndices.map(index => food_list[index]).filter(Boolean);
+  const filteredItems = food_list.filter(item => item.category === category);
+
+  const itemsToRender = category === "All" ? selectedItems : filteredItems;
+
+  console.log("Items to render:", itemsToRender);
+  // console.log("Full food_list:", food_list);
+  console.log("Current category:", category);
+
+
 
   return (
     <div className="food-display">
       <h1>Top Dishes Near You</h1>
       <div className="food-items">
-        {selectedItems.map((item, index) => (
+        {itemsToRender.map((item, index) => (
           <FoodItem
-            key={index}
+            key={item._id || index}
             id={item._id}
             image={item.image}
             name={item.name}

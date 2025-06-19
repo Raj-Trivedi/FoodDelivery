@@ -1,3 +1,5 @@
+/* FoodItem.css */
+
 .food-item {
   background: #fff;
   border-radius: 1vw;
@@ -10,11 +12,41 @@
   transform: translateY(-0.5vw);
 }
 
-.Food-img img {
-  width: 16vw;
+.Food-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.Food-img .img {
+  min-width: 16vw;
   height: 25vh;
   object-fit: cover;
   border-radius: 1vw;
+}
+
+.CountDiv {
+  position: absolute;
+  bottom: 0.5vw;
+  right: 0.5vw;
+}
+
+.CountDiv img {
+  width: 2vw;
+  cursor: pointer;
+}
+
+.btnCountContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+  background: #fff;
+  border-radius: 2vw;
+  padding: 0.2vw 0.5vw;
+}
+
+.btnCountContainer p {
+  font-size: 1vw;
+  margin: 0;
 }
 
 .name-rating {

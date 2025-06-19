@@ -5,6 +5,11 @@ import search_icon from './search_icon.png'
 
 
 
+//login
+import login_assets from './img/login/5739256.jpg';
+
+
+
 
 import biryani from"./img/biryani1-fotor-20250618122029.png"
 import curry from "./img/curry1-fotor-20250618122346.png"
@@ -173,7 +178,8 @@ export const assets = {
     profile_icon,
     logout_icon,
     bag_icon,
-    parcel_icon
+    parcel_icon,
+    login_assets
 }
 
 export const menu_list = [
