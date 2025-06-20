@@ -15,11 +15,16 @@
 .Food-img {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Food-img .img {
-  min-width: 16vw;
-  height: 25vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 1vw;
 }
@@ -83,4 +88,123 @@
   font-size: 1.2vw;
   font-weight: 700;
   color: #d88200;
+}
+
+@media (max-width: 768px) {
+  .food-item {
+    border-radius: 12px;
+    padding: 0;
+    min-width: 180px;
+    max-width: 220px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .Food-img {
+    border-radius: 12px 12px 0 0;
+    aspect-ratio: 1/1;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .Food-img .img {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .name-rating {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-top: 8px;
+    word-break: break-word;
+  }
+  .name-rating .name {
+    font-size: 1rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+  .name-rating .rating .star {
+    font-size: 1.1rem;
+    margin-left: 0;
+    margin-right: 2px;
+  }
+  .Description {
+    padding: 10px 8px 12px 8px;
+  }
+  .Description p {
+    font-size: 1rem;
+    margin: 6px 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .Description .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #d88200;
+    margin-top: 6px;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-item {
+    min-width: 140px;
+    max-width: 160px;
+    padding: 0;
+  }
+  .Food-img {
+    border-radius: 8px 8px 0 0;
+    aspect-ratio: 1/1;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .Food-img .img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .name-rating {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-top: 6px;
+    word-break: break-word;
+  }
+  .name-rating .name {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+  .name-rating .rating .star {
+    font-size: 1rem;
+    margin-left: 0;
+    margin-right: 2px;
+  }
+  .Description {
+    padding: 8px 6px 10px 6px;
+  }
+  .Description p {
+    font-size: 0.98rem;
+    margin: 6px 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .Description .price {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #d88200;
+    margin-top: 6px;
+    display: block;
+  }
 }
