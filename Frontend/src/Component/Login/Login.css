@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body {
+/* Apply a background color to the entire login page context, not the global body */
+.login-page-background {
+    background-color: #f0eefc;
     font-family: 'Poppins', sans-serif;
-    background-color: #f0eefc; /* Light pastel purple */
-    /* Remove margin, padding, and overflow here to avoid affecting other pages */
+    min-height: 100vh;
 }
 
 /* Add a wrapper for the login page to control scroll */
@@ -53,11 +54,13 @@ body {
     flex: 1;
     background-image: url("../../../../assets/frontend_assets/img/login/5739256.jpg");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    scale: 1.1;
     text-align: center;
 }
 
@@ -206,27 +209,34 @@ body {
     }
     .login-box {
         flex-direction: column;
-        max-width: 400px;
-        margin: 20px auto 0 auto;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
     }
     .login-img {
-        display: none;
+        display: none; /* Keep image hidden on mobile */
     }
     .login-detail {
-        padding: 30px;
+        padding: 40px;
+        justify-content: center;
+        flex-grow: 1; /* Allow content to fill height */
     }
 }
 
 @media (max-width: 480px) {
     .login-page-logo {
-        left: 10px;
-        width: 48px;
-        top: 6px;
+        display: none; /* Hide logo on very small screens to save space */
     }
     .login-detail {
-        padding: 16px;
+        padding: 30px;
     }
     .login-detail h1 {
-        font-size: 20px;
+        font-size: 24px;
+    }
+    .remember {
+        font-size: 14px;
     }
 }

@@ -1,25 +1,28 @@
 .Explore-menu{
     padding:10px;
     margin-top: 5vw;
-   /* text-align: center; */
-   /* display: flex;
+    display: flex;
     flex-direction: column;
-    gap:20px; */
+    gap:20px;
 }
-.Explore-menu p{ 
-    font-size: 1.4vw;
-    margin-top: 1vw;
-    /* font-weight: 600; */
+.Explore-menu h1{
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+}
+.Explore-menu > p{
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    max-width: 800px;
+    color: #555;
 }
 .Explore-menu-items{
     display: flex;
-    gap:40px;
-    margin-top: 2vw;
-    justify-content: space-between;
-    align-items: center;
+    gap:30px;
+    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
     text-align: center;
     overflow-x: scroll;
-    padding:10px;
+    padding:10px 0;
   
     cursor: pointer;
      scroll-behavior: smooth; 
@@ -29,13 +32,19 @@
 
 .Explore-menu-item img{
     border-radius: 50%;
-    max-width:12vw;
-    /* max-height: 20vw; */
+    width: 10vw;
+    min-width: 80px;
+    max-width: 120px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: transform 0.2s, border 0.2s;
 }
 
 .Explore-menu-item p{
-    font-weight: 700;
-    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    color: #333;
 }
 .Explore-menu-items::-webkit-scrollbar{
    display: none;
@@ -46,8 +55,9 @@
   
 }
 .Active{
-  padding:1px;
-  border :2px rgb(209, 155, 54) solid;
+  padding:5px;
+  border :3px rgb(227, 155, 0) solid;
+
 
 }
 
@@ -59,32 +69,46 @@
   border: none;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  width: 35px;
-  height: 35px;
- 
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slider-button.left {
-  left: 10px;
+  left: 0px;
 }
 
 .slider-button.right {
-  right: 10px;
+  right: 0px;
 }
 
-/* Optional: hide on small screens
+/* Hide scroll arrows on touch devices/small screens */
 @media (max-width: 768px) {
   .slider-button {
     display: none;
   }
-} */
+  .Explore-menu-items {
+    gap: 20px;
+  }
+  .Explore-menu-item img {
+    min-width: 70px;
+  }
+}
 
 hr{
   margin: 40px 0;
   border: none;
-  height:0.2vw;
-  background-color: rgb(216, 216, 216);
+  height: 2px;
+  background-color: #e0e0e0;
+}
+
+.Explore-menu-item img.Active {
+  padding: 5px;
+  border: 3px rgb(227, 155, 0) solid;
+  transform: scale(1.05);
 }

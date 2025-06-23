@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Apply a background color to the entire login page context, not the global body */
+.login-page-background {
+    background-color: #f0eefc;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+/* Add a wrapper for the login page to control scroll */
+.login-page-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.login-box {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.login-page-logo {
+    position: fixed;
+    top: 20px;
+    left: 40px;
+    width: 80px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.login-logo {
+    display: none;
+}
+
+.login-img {
+    flex: 1;
+    background-image: url("../../../../assets/frontend_assets/img/login/5739256.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    scale: 1.1;
+    text-align: center;
+}
+
+.login-detail {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-detail h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.login-detail .filldetail {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-form .input-box {
+    margin-bottom: 20px;
+}
+
+.login-form .input-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.login-form .input-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.login-form .input-box input:focus {
+    outline: none;
+    border-color: #a395e5; /* Pastel purple accent */
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(163, 149, 229, 0.2);
+}
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.remember-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+}
+
+.remember-box input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #a395e5;
+}
+
+.remember a {
+    color: #a395e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.remember a:hover {
+    text-decoration: underline;
+}
+
+.signup-btn button, .signinWithGoogle button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn button {
+    background-color: #a395e5; /* Pastel purple */
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.signup-btn button:hover {
+    background-color: #8c7ac8;
+}
+
+.signinWithGoogle button {
+    background: #fff;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+}
+
+.signinWithGoogle button:hover {
+    background-color: #f5f5f5;
+}
+
+.signinWithGoogle button img {
+    width: 22px;
+    height: 22px;
+}
+
+.signup-toggle {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-toggle a {
+    color: #a395e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-toggle a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-page-logo {
+        left: 20px;
+        width: 60px;
+        top: 10px;
+    }
+    .login-box {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+    .login-img {
+        display: none; /* Keep image hidden on mobile */
+    }
+    .login-detail {
+        padding: 40px;
+        justify-content: center;
+        flex-grow: 1; /* Allow content to fill height */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page-logo {
+        display: none; /* Hide logo on very small screens to save space */
+    }
+    .login-detail {
+        padding: 30px;
+    }
+    .login-detail h1 {
+        font-size: 24px;
+    }
+    .remember {
+        font-size: 14px;
+    }
+}

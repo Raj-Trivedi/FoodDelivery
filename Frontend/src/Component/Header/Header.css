@@ -8,7 +8,7 @@
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
-
+   /* background-color: red; */
    border-radius: 20px;
    color: #fff;
    margin:10px auto;
@@ -112,4 +112,245 @@
   transform: translate(2px ,0px);
   box-shadow: 0px 1px 0px rgb(139, 113, 255);
   padding-bottom: 1px;
+}
+
+/* Hero/Header Styles */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9fb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+  padding: 48px 48px 32px 48px;
+  margin: 0 auto 32px auto;
+  max-width: 1200px;
+  min-height: 420px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 18px;
+  line-height: 1.15;
+  font-family: 'Poppins', 'Outfit', Arial, sans-serif;
+}
+
+.highlight {
+  background: #ff9000;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-btn {
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(255,144,0,0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.hero-btn.primary {
+  background: #ff9000;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255,144,0,0.12);
+}
+
+.hero-btn.primary:hover {
+  background: #ffb84d;
+  color: #fff;
+}
+
+.hero-btn.howto {
+  background: #fff;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative;
+}
+
+.howto-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ff9000;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.hero-image-frame {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 320px;
+}
+
+.hero-image {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  /* border-radius: 24px; */
+  /* box-shadow: 0 8px 32px rgba(0,0,0,0.10); */
+  /* border: 6px solid #ffe5c2; */
+  /* background: #fff; */
+}
+
+.hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 18px 24px 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 120px;
+  z-index: 3;
+}
+
+.hero-card-img {
+  width: 60px;
+  height:60px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #ff9000;
+}
+
+.hero-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.hero-card-rating {
+  font-size: 1rem;
+  color: #ff9000;
+  letter-spacing: 1px;
+}
+
+.hero-card-user {
+  font-size: 0.95rem;
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .hero-content {
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .hero-image-frame {
+    margin: 0;
+    width: 100%;
+  }
+  .hero-image {
+    width: 80%;
+    max-width: 320px;
+    height: auto;
+  }
+  .hero-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: -40px;
+    width: 80%;
+    max-width: 280px;
+  }
+  .hero-card {
+    position: absolute;
+    bottom:-10px;
+    width: 50%;
+    
+   
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 24px 16px;
+    border-radius: 0;
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-btn {
+    width: 100%;
+  }
+  .hero-image {
+    max-width: 280px;
+  }
+  .hero-card {
+    padding: 12px;
+    margin-top: -30px;
+  }
+  .hero-card-img {
+    width: 48px;
+    height: 48px;
+  }
+  .hero-card-title {
+    font-size: 0.8rem;
+  }
+  .hero-card-rating {
+    font-size: 0.8rem;
+  }
 }

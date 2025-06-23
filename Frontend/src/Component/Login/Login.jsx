@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import googleicon from '../../../../assets/frontend_assets/img/login/g2-removebg-preview.png'
 import logo from '../../../../assets/frontend_assets/img/logos/illustration-organic-food.png'
 
-const Login = () => {
+const Login = ({ onToggle }) => {
   const navigate = useNavigate();
 
   return (
@@ -54,7 +54,7 @@ const Login = () => {
               </div>
 
               <div className="signup-toggle">
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
+                <p>Don't have an account? <a href="#" onClick={onToggle}>Sign Up</a></p>
               </div>
             </form>
           </div>

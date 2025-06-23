@@ -2,209 +2,139 @@
 
 .food-item {
   background: #fff;
-  border-radius: 1vw;
-  padding: 1vw;
-  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  width: 80%; /* Take full width of grid cell */
 }
 
 .food-item:hover {
-  transform: translateY(-0.5vw);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .Food-img {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 1.3/1;
 }
 
 .Food-img .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 1vw;
+  border-radius: 16px 16px 0 0; /* Only top corners rounded */
 }
 
 .CountDiv {
   position: absolute;
-  bottom: 0.5vw;
-  right: 0.5vw;
+  bottom: 10px;
+  right: 10px;
 }
 
-.CountDiv img {
-  width: 2vw;
+.CountDiv img.btnCount {
+  width: 32px;
   cursor: pointer;
+  border-radius: 50%;
+}
+.btncart{
+  background: #fffefe;
+  padding:10px;
+  border-radius: 50%;
 }
 
 .btnCountContainer {
   display: flex;
   align-items: center;
-  gap: 0.5vw;
+  gap: 8px;
   background: #fff;
-  border-radius: 2vw;
-  padding: 0.2vw 0.5vw;
+  border-radius: 20px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .btnCountContainer p {
-  font-size: 1vw;
+  font-size: 1rem;
   margin: 0;
+  font-weight: 600;
+}
+
+.Description {
+    padding: 16px;
+    flex-grow: 1; /* Allows description to fill space */
+    display: flex;
+    flex-direction: column;
 }
 
 .name-rating {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1vw;
+  margin-bottom: 8px;
 }
 
 .name-rating .name {
-  font-size: 1.3vw;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
 .name-rating .rating .star {
   cursor: pointer;
-  font-size: 1.5vw;
+  font-size: 1rem;
   color: #ccc;
   transition: color 0.2s;
-  margin-left: 0.2vw;
+  margin-left: 2px;
 }
 
 .name-rating .rating .star.filled {
   color: #f5a623;
 }
 
-.Description p {
-  font-size: 0.9vw;
+.Description > p {
+  font-size: 0.9rem;
   color: #666;
-  margin: 0.5vw 0 1vw;
+  margin: 0 0 12px 0;
+  flex-grow: 1; /* Allows p to fill space */
 }
 
 .Description .price {
-  font-size: 1.2vw;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #d88200;
 }
 
-@media (max-width: 768px) {
-  .food-item {
-    border-radius: 12px;
-    padding: 0;
-    min-width: 180px;
-    max-width: 220px;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-  .Food-img {
-    border-radius: 12px 12px 0 0;
-    aspect-ratio: 1/1;
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-  .Food-img .img {
-    border-radius: 12px 12px 0 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .name-rating {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    margin-top: 8px;
-    word-break: break-word;
-  }
-  .name-rating .name {
-    font-size: 1rem;
-    margin-bottom: 2px;
-    font-weight: 600;
-  }
-  .name-rating .rating .star {
-    font-size: 1.1rem;
-    margin-left: 0;
-    margin-right: 2px;
-  }
-  .Description {
-    padding: 10px 8px 12px 8px;
-  }
-  .Description p {
-    font-size: 1rem;
-    margin: 6px 0 10px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .Description .price {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #d88200;
-    margin-top: 6px;
-    display: block;
-  }
+.price-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 
-@media (max-width: 480px) {
-  .food-item {
-    min-width: 140px;
-    max-width: 160px;
-    padding: 0;
-  }
-  .Food-img {
-    border-radius: 8px 8px 0 0;
-    aspect-ratio: 1/1;
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-  .Food-img .img {
-    border-radius: 8px 8px 0 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .name-rating {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    margin-top: 6px;
-    word-break: break-word;
-  }
-  .name-rating .name {
-    font-size: 0.95rem;
-    margin-bottom: 2px;
-    font-weight: 600;
-  }
-  .name-rating .rating .star {
-    font-size: 1rem;
-    margin-left: 0;
-    margin-right: 2px;
-  }
-  .Description {
-    padding: 8px 6px 10px 6px;
-  }
-  .Description p {
-    font-size: 0.98rem;
-    margin: 6px 0 10px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .Description .price {
-    font-size: 1.08rem;
-    font-weight: 700;
-    color: #d88200;
-    margin-top: 6px;
-    display: block;
-  }
+.btncart {
+    font-size: 20px;
+    color: #848382;
+     /* width: 38px; */
+     
+   /* height: 38px; */
+    background: #fff;
+    border-radius: 50%;
+    /* border: 1px solid #ddd; */
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.05); */
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.btncart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #fff7f0;
+    color: #fa9f18;
+}
+
+/* Remove media queries as the grid is now controlled by FoodDisplay.css */
+/* The above styles are robust enough for different sizes */

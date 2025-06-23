@@ -1,19 +1,39 @@
 import React from 'react'
 import './Header.css'
-import headerBg from '../../../../assets/frontend_assets/img/header/red.png'
+import foodImg from '../../../../assets/frontend_assets/img/header/thali.png'
+import foodImg2 from '../../../../assets/frontend_assets/img/header/gulab janum.jpg'
+
 
 const Header = () => {
   return (
-   <div className="header-container" style={{backgroundImage: `url(${headerBg})`}}>
-    <div className="header-contains">
-        <h1 className="header-title">Your Favorite Flavors, Just a Click Away.</h1>
-        <p className="header-desc">Hungry? Dive into our wide selection of comforting classics, bold new flavors, and seasonal specialties. Fast delivery, premium quality — every bite, pure joy</p>
-         <button className="button">
- Order now
- <svg className="cartIcon" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
-</button>
-    </div>
+    <header className="hero">
+      <div className="hero-content">
+        <h1 className="hero-title">
+          Order Your Favourite <span className="highlight">Foods</span> & Easy Pickup
+        </h1>
+        <p className="hero-desc">
+        Choose from a wide variety of delicious meals and get them delivered fast. Simple, quick, and just the way you like it.
+        </p>
+        <div className="hero-actions">
+          <button className="hero-btn primary">Order Now</button>
+          <button className="hero-btn howto">
+            <span className="howto-circle" />
+            How To Order
+          </button>
+        </div>
       </div>
+      <div className="hero-image-frame">
+        <img src={foodImg} alt="Food" className="hero-image" />
+        <div className="hero-card">
+          <img src={foodImg2} alt="Egg Salad" className="hero-card-img" />
+          <div className="hero-card-info">
+            <div className="hero-card-title">Free Desert on order above 500</div>
+            <div className="hero-card-rating">⭐⭐⭐⭐⭐</div>
+            {/* <div className="hero-card-user">Thomas Alva</div> */}
+          </div>
+        </div>
+      </div>
+    </header>
   )
 }
 

@@ -1,40 +1,59 @@
 .food-display {
   padding: 2vw 4vw;
+  margin-top: 30px;
 }
 
 .food-display h1 {
-  font-size: 2.5vw;
-  margin-bottom: 2vw;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem); /* Responsive heading */
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .food-items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18vw, 1fr));
-  gap: 2vw;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Default grid */
+  gap: 30px;
+  row-gap: 50px;
+}
+
+@media (max-width: 1024px) {
+  .food-items {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+  }
 }
 
 @media (max-width: 768px) {
-  .food-display {
-    padding: 12px 4px;
-  }
   .food-display h1 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
+    text-align: center;
   }
   .food-items {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 8px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    gap: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .food-display h1 {
-    font-size: 1.1rem;
-  }
   .food-items {
-    gap: 8px;
+    grid-template-columns: 1fr; /* 1 column for mobile */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .food-items {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 8px;
+    scrollbar-width: none; /* Firefox */
+  }
+  .food-items::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  .food-item {
+    min-width: 220px;
+    flex: 0 0 auto;
   }
 }
