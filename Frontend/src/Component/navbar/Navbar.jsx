@@ -5,6 +5,10 @@ import search_icon from '../../../../assets/frontend_assets/search_icon.png'
 import Cart_icon from '../../../../assets/frontend_assets/basket_icon.png'
 import cross_icon from '../../../../assets/frontend_assets/cross_icon.png'
 import { useNavigate } from 'react-router-dom'
+import { StoreContext } from '../../Context/StoreContext.jsx';
+import  { useContext } from 'react';
+
+// import 
 
 export const Navbar = () => {
     const [menu, setMenu] = useState("home");
@@ -12,6 +16,9 @@ export const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const searchInputRef = useRef(null);
     const navigate = useNavigate();
+
+   const { CartItems } = useContext(StoreContext);
+//    console.log(CartItems.length)
 
     // Collapse search bar on outside click
     React.useEffect(() => {
@@ -56,7 +63,7 @@ export const Navbar = () => {
                         <div/><div/><div/>
                     </div>
                 <div className="navbar-section navbar-left">
-                    <img src={logo} alt="Logo" className="navbar-logo" />
+                    <img src={logo} onClick={() => navigate('/')} alt="Logo" className="navbar-logo" />
                 </div>
                 <div className="navbar-section navbar-center">
                     <DesktopMenu />
@@ -87,8 +94,8 @@ export const Navbar = () => {
                     </div>
                     <div className="navbar-cart">
                         <div className="navbar-cart-circle">
-                            <img src={Cart_icon} alt="Cart" />
-                            <span className="navbar-cart-badge">3</span>
+                            <img src={Cart_icon}  onClick={() => navigate('/cart')} alt="Cart" />
+                            <span className="navbar-cart-badge"> {Object.keys(CartItems).length}</span>
                         </div>
                     </div>
                     <button className="navbar-signin-btn" onClick={() => navigate('/signup')}>Sign in</button>

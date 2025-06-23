@@ -1,12 +1,9 @@
 import React from 'react';
 import './AboutUs.css';
 import about_us_girl from '../../../../assets/frontend_assets/img/aboutus/illugirl.jpg';
-import food_icon1 from '../../../../assets/frontend_assets/img/vada1.jpeg';
-import food_icon2 from '../../../../assets/frontend_assets/img/panipuri.jpeg';
-import food_icon3 from '../../../../assets/frontend_assets/img/biryani1.jpeg';
-import food_icon4 from '../../../../assets/frontend_assets/img/masaladosa.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf, faTruckFast, faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -20,7 +17,8 @@ const AboutUs = () => {
               of our culture with the world. We believe that food is more than just
               sustenance—it's an experience, a memory, and a way to connect.
             </p>
-            <button className="about-us-cta">Explore Menu</button>
+            <Link to='/menu'> <button className="about-us-cta">Explore Menu</button></Link>
+            
           </div>
           <div className="about-us-visuals">
             <img src={about_us_girl} alt="Our Chef" className="main-image" />

@@ -5,6 +5,7 @@ import Menu from './Pages/Menu.jsx';
 import AboutUsSec from './Pages/AboutUsSec.jsx';
 import Footer from './Component/Footer/Footer.jsx';
 import SignIn from './Pages/SignIn.jsx';
+import Cart from './Pages/Cart.jsx'
 import './Responsive.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/aboutUs" element={<AboutUsSec />} />
         <Route path="/signup" element={<SignIn />} /> 
+        <Route path="/cart" element={<Cart />} /> 
       </Routes>
 
       {!isAuthPage && <Footer />}
