@@ -64,7 +64,7 @@ const FoodItem = ({ id, image, name, description, price }) => {
         </div>
         <p>{description}</p>
         <div className="price-area">
-          <span className="price">${price.toFixed(2)}</span>
+          <span className="price">₹{price.toFixed(2)}</span>
           <FontAwesomeIcon 
             className='btncart' 
             onClick={() => addToCart(id)} 

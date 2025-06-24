@@ -86,11 +86,11 @@
   height: 100%;
 }
 .navbar-search.active {
-  width: 220px;
+  width: 300px;
   box-shadow: 0 2px 8px rgba(255,144,0,0.10);
 }
 .navbar-search.active input {
-  width: 140px;
+  width: 280px;
   opacity: 1;
 }
 .navbar-search-icon {
@@ -117,7 +117,8 @@
 .navbar-cart-badge {
   position: absolute; top: -8px; right: -8px; background: #ff9000;
   color: #fff; font-size: 0.95rem; font-weight: 700; border-radius: 50%;
-  padding: 2px 7px; min-width: 22px; text-align: center;
+  padding: 2px 2px; 
+  min-width: 22px; text-align: center;
 }
 
 /* --- Sign In Button --- */

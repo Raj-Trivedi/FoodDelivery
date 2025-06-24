@@ -16,8 +16,9 @@ export const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const searchInputRef = useRef(null);
     const navigate = useNavigate();
+    
 
-   const { CartItems } = useContext(StoreContext);
+   const { CartItems,searchItem,setSearchItem } = useContext(StoreContext);
 //    console.log(CartItems.length)
 
     // Collapse search bar on outside click
@@ -71,12 +72,22 @@ export const Navbar = () => {
                 <div className="navbar-section navbar-right">
                     
                     <div className={`navbar-search${searchActive ? ' active' : ''}`} ref={searchInputRef}>
+                         <input
+                            type="text"
+                            placeholder="Search"
+                            value={searchItem}
+                            onChange={(e) => setSearchItem(e.target.value)}
+                            
+                            onFocus={() => setSearchActive(true)}
+                            className={searchActive ? 'expanded' : ''}
+                        />
                         <img
                             src={search_icon}
                             alt="Search"
                             className="navbar-search-icon"
                             onClick={() => {
                                 setSearchActive(true);
+                                navigate('/menu');
                                 setTimeout(() => {
                                     if (searchInputRef.current) {
                                         const input = searchInputRef.current.querySelector('input');
@@ -85,12 +96,7 @@ export const Navbar = () => {
                                 }, 100);
                             }}
                         />
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            onFocus={() => setSearchActive(true)}
-                            className={searchActive ? 'expanded' : ''}
-                        />
+                       
                     </div>
                     <div className="navbar-cart">
                         <div className="navbar-cart-circle">

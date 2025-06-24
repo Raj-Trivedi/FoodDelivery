@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { StoreContext } from '../../Context/StoreContext'
 import './CartItem.css'
 
-const CartItem = () => {
+const CartItem = ({totalItems}) => {
   const { food_list, CartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   // Calculate total items in cart
-  const totalItems = Object.values(CartItems).reduce((acc, item) => acc + item, 0);
+  // const totalItems = Object.values(CartItems).reduce((acc, item) => acc + item, 0);
 
   return (
     <div className='CartItem-Container'>
@@ -33,22 +33,26 @@ const CartItem = () => {
                   <span onClick={() => removeFromCart(item._id)}>Remove</span>
                 </div>
               </div>
+              <div className="cartitem-des">
+                 <div className='QuantityControl'>
+                 <button onClick={() => removeFromCart(item._id)}>-</button>
+                 <p>{CartItems[item._id]}</p>
+                 <button onClick={() => addToCart(item._id)}>+</button>
+                 </div>  
 
-              <div className='QuantityControl'>
-                <button onClick={() => removeFromCart(item._id)}>-</button>
-                <p>{CartItems[item._id]}</p>
-                <button onClick={() => addToCart(item._id)}>+</button>
+                 <p>£{item.price.toFixed(2)}</p>
+                 <p>£{(item.price * CartItems[item._id]).toFixed(2)}</p>
+
               </div>
 
-              <p>£{item.price.toFixed(2)}</p>
-              <p>£{(item.price * CartItems[item._id]).toFixed(2)}</p>
+             
             </div>
           );
         }
         return null;
       })}
 
-      <a href="/" className="ContinueShopping">← Continue Shopping</a>
+      <a href="/menu" className="ContinueShopping">← Continue Shopping</a>
     </div>
   );
 };

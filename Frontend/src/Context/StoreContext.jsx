@@ -5,6 +5,17 @@ export const StoreContext = createContext(null);
 const StoreContextProvider=(props)=>{
 
     const [CartItems, setCartItems] = useState({}); 
+    const [liked, setLiked] = useState({});
+    const [searchItem, setSearchItem] = useState("");
+
+     const toggleLike = (id) => {
+        if(!liked[id]) {
+            setLiked((prev)=> ( {...prev, [id]: 1} ));
+        }else{
+             setLiked((prev)=> ( {...prev, [id]: 0} ));
+        }
+      };
+    
    
  
     const addToCart=(itemId)=>{
@@ -46,7 +57,11 @@ const StoreContextProvider=(props)=>{
         food_list,
         addToCart,
         removeFromCart,
-        CartItems
+        CartItems,
+        toggleLike,
+        liked,
+        searchItem,
+        setSearchItem
 
 
     }
