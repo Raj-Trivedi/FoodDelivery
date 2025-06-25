@@ -4,7 +4,7 @@
   padding: 20px 40px; 
   font-family: 'Arial', sans-serif;
   background-color: #eceaea;
-  max-height: 600px;
+  /* max-height: 600px; */
 }
 
 .CartSummary-container h2 {
@@ -104,7 +104,7 @@
   font-size: 16px;
   font-weight: bold;
   color: #333;
-  margin-top: 10px;
+  margin-top: 0px;
   gap: 20px; /* spacing between total cost and button */
   padding: 0 10px;
 }
@@ -218,5 +218,44 @@
 
 .Change-Address p:hover {
   background-color: #f9e9e9;
+}
+
+.CartSummary-breakdown {
+  margin-bottom: 1em;
+  /* background: #f7f7f7; */
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.CartSummary-break-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.CartSummary-break-label {
+  color: #555;
+  font-size: 15px;
+}
+
+.CartSummary-break-value {
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.CartSummary-break-discount {
+  color: #009688;
+}
+
+.CartSummary-break-total {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.CartSummary-break-hr {
+  margin: 0.5em 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
 }
 

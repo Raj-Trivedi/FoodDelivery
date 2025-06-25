@@ -9,7 +9,8 @@ const StoreContextProvider = ({ children }) => {
   const [liked, setLiked] = useState({});
   const [searchItem, setSearchItem] = useState("");
   const [CostAfterShipping, setCostAfterShipping] = useState(0);
-const [shippingCharge, setShippingCharge] = useState(49);
+  const [shippingCharge, setShippingCharge] = useState(49.99);
+  const [isExpress, setIsExpress] = useState(false);
 
   // Toggle like
   const toggleLike = (id) => {
@@ -52,15 +53,20 @@ const [shippingCharge, setShippingCharge] = useState(49);
     }
     setTotalCost(total);
   }, [CartItems]);
-    // Calculate total cost with shipping charge
-    useEffect(() => {
-        if(TotalCost <= 500) {
-            setShippingCharge(0);
-        }
-        
+
+  // Calculate total cost with shipping charge
+  useEffect(() => {
+    // Only auto-set shipping if not express
+    if (!isExpress) {
+      if (TotalCost < 500) {
+        setShippingCharge(49.99);
+      } else {
+        setShippingCharge(0);
+      }
+    }
     const totalWithShipping = TotalCost + shippingCharge;
     setCostAfterShipping(totalWithShipping);
-  }, [TotalCost, shippingCharge]);
+  }, [TotalCost, shippingCharge, isExpress]);
 
   const valueList = {
     food_list,
@@ -76,7 +82,8 @@ const [shippingCharge, setShippingCharge] = useState(49);
     setCostAfterShipping,
     shippingCharge,
     setShippingCharge,
-    
+    isExpress,
+    setIsExpress,
   };
 
   return (

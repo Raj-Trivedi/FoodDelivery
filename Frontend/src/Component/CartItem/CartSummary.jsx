@@ -1,9 +1,11 @@
 import React from 'react'
 import './CartSummary.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
+import coupons from './coupons.js';
+
 const CartSummary = ({totalItems}) => {
    const [showChangeAddress, setShowChangeAddress] = useState(false);
   const navigate = useNavigate();
@@ -11,11 +13,48 @@ const CartSummary = ({totalItems}) => {
     setCostAfterShipping,
     shippingCharge,
     setShippingCharge,
+    isExpress,
+    setIsExpress
  } = useContext(StoreContext);
+
+  const [couponInput, setCouponInput] = useState("");
+  const [appliedCoupon, setAppliedCoupon] = useState(null);
+  const [couponError, setCouponError] = useState("");
+  const [discount, setDiscount] = useState(0);
+  // Mock: Assume user is first-time customer
+  const isFirstTimeCustomer = true;
 
   const handleToggleChangeAddress = () => {
     setShowChangeAddress(prev => !prev);
   };
+
+  // Coupon apply handler
+  const handleApplyCoupon = () => {
+    const code = couponInput.trim();
+    const found = coupons.find(c => c.code.toLowerCase() === code.toLowerCase());
+    if (!found) {
+      setCouponError("Invalid coupon code");
+      setAppliedCoupon(null);
+      setDiscount(0);
+      return;
+    }
+    if (found.minOrder && TotalCost < found.minOrder) {
+      setCouponError(`Minimum order ₹${found.minOrder} required`);
+      setAppliedCoupon(null);
+      setDiscount(0);
+      return;
+    }
+    if (found.firstTimeOnly && !isFirstTimeCustomer) {
+      setCouponError("Only for first-time customers");
+      setAppliedCoupon(null);
+      setDiscount(0);
+      return;
+    }
+    setAppliedCoupon(found);
+    setCouponError("");
+    setDiscount(found.discount);
+  };
+
   return (
    <div className="CartSummary-container">
      <h2>
@@ -48,20 +87,21 @@ const CartSummary = ({totalItems}) => {
         <div className="Shipping-box">
           <select
             className="shipping-select"
-            // value={shippingCharge}
-            // onChange={(e) => setShippingCharge((e.target.value))}
+            value={shippingCharge}
+            onChange={(e) => {
+              const value = parseFloat(e.target.value);
+              if (value === 99.99) {
+                setIsExpress(true);
+                setShippingCharge(99.99);
+              } else {
+                setIsExpress(false);
+                setShippingCharge(value);
+              }
+            }}
           >
-            {/* <option value="0" disabled={TotalCost < 500}>
-              Free Delivery (Min order ₹500)
-            </option> */}
-
-
-            <option value="49"  onClick={(e)=>setShippingCharge(49.99)} disabled={TotalCost>500}>Standard Delivery - ₹49.99</option>
-            <option value="99.99"  onClick={(e)=>setShippingCharge(99.99)} >Express Delivery (30 - 40 mins) - ₹99.99</option>
-             <option value="0"  onClick={(e)=>setShippingCharge(0)}  disabled={TotalCost< 500}>
-              Free Delivery (Min order ₹500)
-            </option>
-            {/* <option value="0">Free Delivery (Min order ₹500)</option> */}
+            <option value={49.99} disabled={TotalCost >= 500}>Standard Delivery - ₹49.99</option>
+            <option value={99.99}>Express Delivery (30 - 40 mins) - ₹99.99</option>
+            <option value={0} disabled={TotalCost < 500}>Free Delivery (Min order ₹500)</option>
           </select>
 
         </div>
@@ -69,16 +109,41 @@ const CartSummary = ({totalItems}) => {
       <div className="CartSummary-CouponCode">
         <p>Discount Coupon</p>
         <div className="Coupon-box">
-            <input type="text"  className="Coupon-input" placeholder='Enter Coupon code' />
-            <button>Apply</button>
+            <input type="text"  className="Coupon-input" placeholder='Enter Coupon code' value={couponInput} onChange={e => setCouponInput(e.target.value)} />
+            <button onClick={handleApplyCoupon}>Apply</button>
         </div>
+        {couponError && <div style={{color:'red', fontSize:'0.9em'}}>{couponError}</div>}
+        {appliedCoupon && <div style={{color:'green', fontSize:'0.9em'}}>Applied: {appliedCoupon.description}</div>}
       </div>
-      <hr />
+      <hr className="CartSummary-break-hr"/>
+      {/* Summary Section */}
+      <div className="CartSummary-breakdown">
+        <div className="CartSummary-break-row">
+          <span className="CartSummary-break-label">Actual Price</span>
+          <span className="CartSummary-break-value">₹{TotalCost}</span>
+        </div>
+        <div className="CartSummary-break-row">
+          <span className="CartSummary-break-label">Shipping</span>
+          <span className="CartSummary-break-value">₹{shippingCharge}</span>
+        </div>
+        <div className="CartSummary-break-row">
+          <span className="CartSummary-break-label">Discount</span>
+          <span className="CartSummary-break-value CartSummary-break-discount">-₹{discount}</span>
+        </div>
+        <hr className="CartSummary-break-hr"/>
+        {/* <div className="CartSummary-break-row CartSummary-break-total">
+          <span className="CartSummary-break-label">Total Payable</span>
+          <span className="CartSummary-break-value">₹{Math.max(CostAfterShipping - discount, 0)}</span>
+        </div> */}
+      </div>
       <div className="CartSummary-totalCost">
         <div className="totalcost">
             <p>Total cost</p>
-            <span className='Subtotal'>₹{CostAfterShipping}</span>
+            <span className='Subtotal'>₹{Math.max(CostAfterShipping - discount, 0)}</span>
         </div>
+        {/* {discount > 0 && (
+          <div style={{fontSize:'0.95em', color:'#009688'}}>Discount: -₹{discount}</div>
+        )} */}
        
         <div className="TotalCost-box">
             

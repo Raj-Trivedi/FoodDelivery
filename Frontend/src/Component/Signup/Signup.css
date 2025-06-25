@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Apply a background color to the entire login page context, not the global body */
-.login-page-background {
+/* Apply a background color to the entire signup page context, not the global body */
+.signup-page-background {
     background-color: #f0eefc;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
 }
 
-/* Add a wrapper for the login page to control scroll */
-.login-page-wrapper {
+/* Add a wrapper for the signup page to control scroll */
+.signup-page-wrapper {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
-.login-container {
+.signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,7 @@
     overflow: hidden;
 }
 
-.login-box {
+.signup-box {
     display: flex;
     width: 100%;
     max-width: 900px;
@@ -37,7 +37,7 @@
     position: relative;
 }
 
-.login-page-logo {
+.signup-page-logo {
     position: fixed;
     top: 20px;
     left: 40px;
@@ -46,13 +46,13 @@
     z-index: 10;
 }
 
-.login-logo {
+.signup-logo {
     display: none;
 }
 
-.login-img {
+.signup-img {
     flex: 1;
-    background-image: url("../../../../assets/frontend_assets/img/login/5739256.jpg");
+    background-image: url("../../../../assets/frontend_assets/img/signup/5739256.jpg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@
     text-align: center;
 }
 
-.login-detail {
+.signup-detail {
     flex: 1;
     padding: 40px;
     display: flex;
@@ -72,126 +72,147 @@
     justify-content: center;
 }
 
-.login-detail h1 {
+.signup-detail h1 {
     font-size: 28px;
     color: #333;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
-.login-detail .filldetail {
+.signup-detail .filldetail {
     font-size: 14px;
     color: #666;
     margin-bottom: 30px;
 }
 
-.login-form .input-box {
+.signup-form .input-box {
     margin-bottom: 20px;
 }
 
-.login-form .input-box p {
+.signup-form .input-box p {
     font-size: 14px;
     color: #555;
     margin-bottom: 8px;
 }
 
-.login-form .input-box input {
+.signup-form .input-box input {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s;
 }
 
-.login-form .input-box input:focus {
+.signup-form .input-box input:focus {
     outline: none;
-    border-color: #a395e5; /* Pastel purple accent */
-    background-color: #fff;
-    box-shadow: 0 0 0 3px rgba(163, 149, 229, 0.2);
+    border-color: #7e57c2;
 }
 
 .remember {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin: 15px 0 25px;
     font-size: 13px;
 }
 
 .remember-box {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: #555;
+    gap: 5px;
 }
 
 .remember-box input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: #a395e5;
+    cursor: pointer;
 }
 
 .remember a {
-    color: #a395e5;
+    color: #7e57c2;
     text-decoration: none;
-    font-weight: 500;
 }
 
 .remember a:hover {
     text-decoration: underline;
 }
 
-.signup-btn button, .signinWithGoogle button {
+.signup-btn button {
     width: 100%;
     padding: 12px;
+    background-color: #7e57c2;
+    color: white;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.signup-btn button {
-    background-color: #a395e5; /* Pastel purple */
-    color: #fff;
-    margin-bottom: 15px;
+    transition: background-color 0.3s;
 }
 
 .signup-btn button:hover {
-    background-color: #8c7ac8;
+    background-color: #6a45b8;
+}
+
+.signinWithGoogle {
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.signinWithGoogle::before,
+.signinWithGoogle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.signinWithGoogle::before {
+    left: 0;
+}
+
+.signinWithGoogle::after {
+    right: 0;
 }
 
 .signinWithGoogle button {
-    background: #fff;
-    color: #555;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 25px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .signinWithGoogle button:hover {
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
 }
 
-.signinWithGoogle button img {
-    width: 22px;
-    height: 22px;
+.signinWithGoogle img {
+    width: 18px;
+    height: 18px;
 }
 
 .signup-toggle {
     text-align: center;
     font-size: 14px;
-    color: #555;
+    color: #666;
+    margin-top: 20px;
 }
 
 .signup-toggle a {
-    color: #a395e5;
+    color: #7e57c2;
     text-decoration: none;
     font-weight: 500;
 }
@@ -202,41 +223,48 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .login-page-logo {
-        left: 20px;
-        width: 60px;
-        top: 10px;
-    }
-    .login-box {
+    .signup-box {
         flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        min-height: 100vh;
-        border-radius: 0;
-        margin: 0;
-        box-shadow: none;
+        max-width: 90%;
+        margin: 20px auto;
     }
-    .login-img {
-        display: none; /* Keep image hidden on mobile */
+
+    .signup-img {
+        display: none;
     }
-    .login-detail {
-        padding: 40px;
-        justify-content: center;
-        flex-grow: 1; /* Allow content to fill height */
+
+    .signup-detail {
+        padding: 30px 25px;
+    }
+
+    .signup-page-logo {
+        left: 20px;
+        top: 15px;
+        width: 60px;
     }
 }
 
 @media (max-width: 480px) {
-    .login-page-logo {
-        display: none; /* Hide logo on very small screens to save space */
+    .signup-box {
+        max-width: 95%;
+        margin: 10px auto;
     }
-    .login-detail {
-        padding: 30px;
+
+    .signup-detail {
+        padding: 25px 20px;
     }
-    .login-detail h1 {
+
+    .signup-detail h1 {
         font-size: 24px;
     }
+
     .remember {
-        font-size: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .remember a {
+        margin-top: 5px;
     }
 }

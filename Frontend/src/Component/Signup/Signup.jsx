@@ -18,15 +18,15 @@ const Signup = ({ onToggle }) => {
       <div className="login-container">
         <div className="login-box">
           <div className="login-img">
-            {/* This div is for the background image, same as login */}
+            {/* This div is for the background image */}
           </div>
 
           <div className="login-detail">
-            <h1>Create an Account</h1>
-            <p className='filldetail'>Let's get you started!</p>
+            <h1>Create Account</h1>
+            <p className='filldetail'>Please enter your details to sign up.</p>
             <form className='login-form'>
               <div className="input-box">
-                <p>Full Name</p>
+                <p>Full Namess</p>
                 <input type="text" placeholder='Enter your full name' required />
               </div>
               <div className="input-box">
@@ -37,17 +37,30 @@ const Signup = ({ onToggle }) => {
                 <p>Password</p>
                 <input type="password" placeholder='Create a password' required />
               </div>
+              <div className="input-box">
+                <p>Confirm Password</p>
+                <input type="password" placeholder='Confirm your password' required />
+              </div>
+              
+              <div className="remember">
+                <div className="remember-box">
+                  <input type="checkbox" id="terms" required />
+                  <label htmlFor="terms">I agree to the Terms & Conditions</label>
+                </div>
+              </div>
+
 
               <div className="signup-btn">
                 <button type="submit">Sign Up</button>
               </div>
 
               <div className="signinWithGoogle">
-                <button type="button">
+                <button type="button"> 
                   <img src={googleicon} alt="Google Icon" />
                   Sign up with Google
                 </button>
               </div>
+
 
               <div className="signup-toggle">
                 <p>Already have an account? <a href="#" onClick={onToggle}>Log In</a></p>
