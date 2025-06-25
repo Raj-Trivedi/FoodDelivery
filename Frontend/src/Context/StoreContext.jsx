@@ -1,77 +1,89 @@
-import { createContext ,useState , useEffect} from "react";
+import { createContext, useState, useEffect } from "react";
 import { food_list } from "../../../assets/frontend_assets/assets";
+
 export const StoreContext = createContext(null);
 
-const StoreContextProvider=(props)=>{
+const StoreContextProvider = ({ children }) => {
+  const [CartItems, setCartItems] = useState({});
+  const [TotalCost, setTotalCost] = useState(0);
+  const [liked, setLiked] = useState({});
+  const [searchItem, setSearchItem] = useState("");
+  const [CostAfterShipping, setCostAfterShipping] = useState(0);
+const [shippingCharge, setShippingCharge] = useState(49);
 
-    const [CartItems, setCartItems] = useState({}); 
-    const [liked, setLiked] = useState({});
-    const [searchItem, setSearchItem] = useState("");
+  // Toggle like
+  const toggleLike = (id) => {
+    setLiked((prev) => ({
+      ...prev,
+      [id]: prev[id] === 1 ? 0 : 1,
+    }));
+  };
 
-     const toggleLike = (id) => {
-        if(!liked[id]) {
-            setLiked((prev)=> ( {...prev, [id]: 1} ));
-        }else{
-             setLiked((prev)=> ( {...prev, [id]: 0} ));
+  // Add to cart
+  const addToCart = (itemId) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: (prev[itemId] || 0) + 1,
+    }));
+  };
+
+  // Remove from cart
+  const removeFromCart = (itemId) => {
+    setCartItems((prev) => {
+      const updatedCart = { ...prev };
+      if (updatedCart[itemId] > 1) {
+        updatedCart[itemId] -= 1;
+      } else {
+        delete updatedCart[itemId];
+      }
+      return updatedCart;
+    });
+  };
+
+  // Calculate total cost when CartItems change
+  useEffect(() => {
+    let total = 0;
+    for (const itemId in CartItems) {
+      const quantity = CartItems[itemId];
+      const item = food_list.find((item) => item._id === itemId);
+      if (item) {
+        total += item.price * quantity;
+      }
+    }
+    setTotalCost(total);
+  }, [CartItems]);
+    // Calculate total cost with shipping charge
+    useEffect(() => {
+        if(TotalCost <= 500) {
+            setShippingCharge(0);
         }
-      };
+        
+    const totalWithShipping = TotalCost + shippingCharge;
+    setCostAfterShipping(totalWithShipping);
+  }, [TotalCost, shippingCharge]);
+
+  const valueList = {
+    food_list,
+    addToCart,
+    removeFromCart,
+    CartItems,
+    toggleLike,
+    liked,
+    searchItem,
+    setSearchItem,
+    TotalCost,
+    CostAfterShipping,
+    setCostAfterShipping,
+    shippingCharge,
+    setShippingCharge,
     
-   
- 
-    const addToCart=(itemId)=>{
-        if(!CartItems[itemId]) {
-            setCartItems((prev)=> ( {...prev, [itemId]: 1} ));
-        }
-        else{
-            setCartItems((prev)=> ( {...prev, [itemId]: prev[itemId] + 1} ));
-        }
-    }
+  };
 
+  return (
+    <StoreContext.Provider value={valueList}>
+      {children}
+    </StoreContext.Provider>
+  );
+};
 
-    const removeFromCart=(itemId)=>{
-        if(CartItems[itemId]){
-            setCartItems((prev)=> (
-                {...prev, [itemId]: prev[itemId] -1} 
-            )
-            );
-        }
-    }
-    // const removeFromCart = (itemId) => {
-    //     setCartItems((prev) => {
-    //         const updatedCart = { ...prev };
-    //         if (updatedCart[itemId] > 1) {
-    //         updatedCart[itemId] -= 1;
-    //         } else {
-    //         delete updatedCart[itemId];
-    //         }
-    //         return updatedCart;
-    //     });
-    // };
-        useEffect(() => {
-            // console.log("Cart Items Updated:", CartItems);
-        },[CartItems]);
-
-
-
-    const valueList={
-        food_list,
-        addToCart,
-        removeFromCart,
-        CartItems,
-        toggleLike,
-        liked,
-        searchItem,
-        setSearchItem
-
-
-    }
-     
-
-    return(
-        <StoreContext.Provider value={valueList}>
-            {props.children}
-        </StoreContext.Provider>
-    )
-} 
-
-export default StoreContextProvider;
+export  default StoreContextProvider;

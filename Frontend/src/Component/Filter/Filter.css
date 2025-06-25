@@ -7,7 +7,7 @@
     
 }
 
-.Catergory_cont
+.filter-content
 {
     overflow-x: scroll;
     max-height: 20vw;
@@ -24,7 +24,7 @@
     font-size: 1.2rem;
     color: #343a40;
 }
-.Catergory_cont::-webkit-scrollbar {
+.filter-content::-webkit-scrollbar {
     visibility: hidden;
 }
 .categogy_list{

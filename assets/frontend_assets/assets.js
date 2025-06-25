@@ -719,8 +719,8 @@ export const food_list =
     },
     {
         _id: "59",
-        name: dosa_5,
-        image: "food_77",
+        name: "Mysore Masala Dosa",
+        image:  dosa_5,
         price: 192,
         description: "Mysore Masala Dosa is a aromatic dish made with care for a truly comforting experience.",
         category: "Dosa"
