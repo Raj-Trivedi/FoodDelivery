@@ -42,7 +42,7 @@ const FoodItem = ({ id, image, name, description, price, onAddToCart, onRemoveFr
 
   return (
     <div className="food-item">
-      <div className="Food-img" onClick={() => navigate(`/product/${id}`)} style={{cursor:'pointer'}}>
+      <div className="Food-img" onClick={() => navigate(`/product/${name}/${id}`)} style={{cursor:'pointer'}}>
         <img className="img" src={image} alt={name} />
 
         <div className="CountDiv">
@@ -71,7 +71,7 @@ const FoodItem = ({ id, image, name, description, price, onAddToCart, onRemoveFr
 
       <div className="Description">
         <div className="name-rating">
-          <span className="name" onClick={() => navigate(`/product/${id}`)} style={{cursor:'pointer'}}>{name}</span>
+          <span className="name" onClick={() => navigate(`/product/${name}/${id}`)} style={{cursor:'pointer'}}>{name}</span>
           <span className="rating">
             {[1, 2, 3, 4, 5].map((value) => (
               <span

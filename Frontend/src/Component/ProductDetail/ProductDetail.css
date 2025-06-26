@@ -73,6 +73,9 @@
   gap: 8px;
   margin-bottom: 8px;
 }
+.product-stars{
+  cursor: pointer;
+}
 .product-stars .star {
   font-size: 1.3em;
   color: #ccc;

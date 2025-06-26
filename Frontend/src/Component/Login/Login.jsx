@@ -5,8 +5,11 @@ import googleicon from '../../../../assets/frontend_assets/img/login/g2-removebg
 import logo from '../../../../assets/frontend_assets/img/logos/illustration-organic-food.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AppContext } from '../../Context/AppContext'
 
 const Login = ({ onToggle }) => {
+
+  const { setIsAuthenticated, setUser } = React.useContext(AppContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -23,6 +26,14 @@ const Login = ({ onToggle }) => {
       toast.error('Invalid credentials!', { position: 'top-center', autoClose: 2000 });
       return;
     }
+    
+    // Set user and authentication state
+    setUser({ email });
+    setIsAuthenticated(true);
+    
+    // Redirect to home page after successful login
+    form.reset();
+    
     toast.success('Login successful!', { position: 'top-center', autoClose: 2000 });
     setTimeout(() => navigate('/'), 1200);
   };

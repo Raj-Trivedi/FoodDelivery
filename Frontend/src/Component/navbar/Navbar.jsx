@@ -7,6 +7,7 @@ import cross_icon from '../../../../assets/frontend_assets/cross_icon.png'
 import { useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext.jsx';
 import  { useContext } from 'react';
+import { AppContext } from '../../Context/AppContext.jsx'
 
 // import 
 
@@ -16,6 +17,7 @@ export const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const searchInputRef = useRef(null);
     const navigate = useNavigate();
+    const { User, SetUser,isAuthenticated ,setIsAuthenticated } = useContext(AppContext);
     
 
    const { CartItems,searchItem,setSearchItem } = useContext(StoreContext);
@@ -43,6 +45,9 @@ export const Navbar = () => {
             <li onClick={() => { setMenu("home"); navigate("/") }} className={menu === "home" ? "active" : ""}>Home</li>
             <li onClick={() => { setMenu("menu"); navigate("/menu") }} className={menu === "menu" ? "active" : ""}>Menu</li>
             <li onClick={() => { setMenu("about"); navigate("/aboutUs") }} className={menu === "about" ? "active" : ""}>About us</li>
+            {User && (
+                <li onClick={() => { setMenu("myorder"); navigate("/myorder") }} className={menu === "myorder" ? "active" : ""}>My Orders</li>
+            )}
         </ul>
     );
 
@@ -104,7 +109,13 @@ export const Navbar = () => {
                             <span className="navbar-cart-badge"> {Object.keys(CartItems).length}</span>
                         </div>
                     </div>
-                    <button className="navbar-signin-btn" onClick={() => navigate('/signup')}>Sign in</button>
+                    { User ?
+                        <button className="navbar-signin-btn" onClick={() => {navigate('/'); SetUser(null) } }>Log out</button>
+
+                    :
+                        <button className="navbar-signin-btn" onClick={() => {navigate('/signup'); setIsAuthenticated("false")} }>Log in</button>
+
+                    }
                 </div>
             </nav>
             <MobileSidebar />

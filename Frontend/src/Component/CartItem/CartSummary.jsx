@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
-import coupons from './coupons.js';
+import coupons from '../../../../assets/frontend_assets/coupons.js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cart from '../../Pages/Cart.jsx';
 
 const CartSummary = ({totalItems}) => {
    const [showChangeAddress, setShowChangeAddress] = useState(false);
@@ -17,7 +18,8 @@ const CartSummary = ({totalItems}) => {
     setShippingCharge,
     isExpress,
     setIsExpress,
-    address
+    address,setMyorder,CartItems,addToMyOrder,setCartItems
+    
  } = useContext(StoreContext);
 
   const [couponInput, setCouponInput] = useState("");
@@ -64,13 +66,29 @@ const CartSummary = ({totalItems}) => {
         position: 'top-center',
         autoClose: 2500,
       });
-      return;
+
+      
     }
+    console.log("CartItems:", CartItems);
+    
+    // Add items to my order
+    Object.keys(CartItems).forEach(itemId => {
+      addToMyOrder(itemId);
+    });
+    
+    // Reset cart items after placing order
+  
+    
+    // Clear cart items
+    
+    // CartItems = {};
     // Place order logic here (if any)
     toast.success('Order placed successfully!', {
       position: 'top-center',
       autoClose: 2500,
     });
+     setTimeout(() => navigate('/'), 500);
+    setCartItems({});
   };
 
   return (
@@ -171,7 +189,7 @@ const CartSummary = ({totalItems}) => {
        
         <div className="TotalCost-box">
             
-            <button className='Checkout-btn' onClick={handlePlaceOrder}>Place Order</button>
+            <button className='Checkout-btn' onClick={()=>{handlePlaceOrder()}}>Place Order</button>
         </div>
       </div>
       <ToastContainer />

@@ -12,6 +12,7 @@ const StoreContextProvider = ({ children }) => {
   const [shippingCharge, setShippingCharge] = useState(49.99);
   const [isExpress, setIsExpress] = useState(false);
   const [address, setAddress] = useState(null);
+  const [myorder, setMyorder] = useState({});
 
   // Toggle like
   const toggleLike = (id) => {
@@ -29,18 +30,33 @@ const StoreContextProvider = ({ children }) => {
     }));
   };
 
+  const addToMyOrder = (itemId) => {
+    setMyorder((prev) => ({
+      ...prev,
+      [itemId]: (prev[itemId] || 0) + 1,
+    }));
+  }
+
   // Remove from cart
   const removeFromCart = (itemId) => {
     setCartItems((prev) => {
       const updatedCart = { ...prev };
       if (updatedCart[itemId] > 1) {
-        updatedCart[itemId] -= 1;
+        updatedCart[itemId] -= 1;setCartItems
       } else {
         delete updatedCart[itemId];
       }
       return updatedCart;
     });
   };
+
+  // const AddtoMyOrder=(itemId)=>{
+  //   setMyorder((prev) => ({
+  //     ...prev,
+  //     [itemId]:1,
+  //   }));
+
+  // }
 
   // Calculate total cost when CartItems change
   useEffect(() => {
@@ -74,6 +90,7 @@ const StoreContextProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     CartItems,
+    setCartItems,
     toggleLike,
     liked,
     searchItem,
@@ -87,6 +104,10 @@ const StoreContextProvider = ({ children }) => {
     setIsExpress,
     address,
     setAddress,
+    myorder,
+    setMyorder,
+    // 
+    addToMyOrder
   };
 
   return (

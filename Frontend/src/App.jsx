@@ -8,6 +8,8 @@ import SignIn from './Pages/SignIn.jsx';
 import Cart from './Pages/Cart.jsx'
 import Address from './Pages/Address/Address.jsx';
 import ProductDetail from './Component/ProductDetail/ProductDetail.jsx';
+import Myorder from './Pages/Myorder/Myorder.jsx';
+import Admin from './Pages/AdminPanel/Admin.jsx';
 
 
 
@@ -30,7 +32,10 @@ function App() {
         <Route path="/signup" element={<SignIn />} /> 
         <Route path="/cart" element={<Cart />} /> 
         <Route path="/address" element={<Address />} /> 
-        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/product/:category/:id" element={<ProductDetail />} />
+        <Route path="/myorder" element={<Myorder />} />
+        <Route path="/admin" element={<Admin/>} />
+
 
 
       </Routes>

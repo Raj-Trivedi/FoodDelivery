@@ -2,24 +2,26 @@ import React, { useContext, useState } from 'react';
 import './ProductDetail.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { food_list, addToCart, CartItems } = useContext(StoreContext);
   const product = food_list.find(item => item._id === id);
-  const [rating, setRating] = useState(4); // Mock default rating
+  const [rating, setRating] = useState(0); // Mock default rating
   const [review, setReview] = useState('');
   const [reviews, setReviews] = useState([]);
-  const [selectedServe, setSelectedServe] = useState(1);
+  // const [selectedServe, setSelectedServe] = useState(1);
   const [mainImg, setMainImg] = useState(product ? product.image : '');
 
-  // Mock data for subtitle, tags, and review count
-  const subtitle = product?.subtitle || 'with Garlic Crostinis';
-  const reviewCount = reviews.length || 29;
+  const subtitle = product?.subtitle || 'Product Subtitle';
+  const reviewCount = rating || 0;
   const tags = product?.tags || [
-    { label: 'Non Vegetarian', type: 'nonveg' },
-    { label: 'American', type: 'cuisine' },
+    { label: 'Vegetarian', type: 'nonveg' },
+    { label: 'Indian', type: 'cuisine' },
     { label: 'Main Course', type: 'course' }
   ];
 
@@ -35,12 +37,12 @@ const ProductDetail = () => {
     if (review.trim()) {
       setReviews([...reviews, { rating, text: review }]);
       setReview('');
-      setRating(4);
+      setRating(0);
     }
   };
 
   const handleAddToCart = () => {
-    addToCart(product._id);
+       
   };
 
   // For thumbnails, use main image for now
@@ -72,6 +74,7 @@ const ProductDetail = () => {
                 <span
                   key={val}
                   className={val <= rating ? 'star filled' : 'star'}
+                  onClick={() => setRating(val)}
                 >★</span>
               ))}
             </span>
@@ -84,7 +87,7 @@ const ProductDetail = () => {
           </div>
           <div className="product-price-row">
             <span className="product-price">Price <b>₹{product.price.toFixed(2)}</b></span>
-            <span className="product-serves">Serves
+            {/* <span className="product-serves">Serves
               {[1,2,3,4,5].map(val => (
                 <button
                   key={val}
@@ -92,9 +95,16 @@ const ProductDetail = () => {
                   onClick={() => setSelectedServe(val)}
                 >{val}{val === 5 ? '+' : ''}</button>
               ))}
-            </span>
+            </span> */}
           </div>
-          <button className="add-to-cart-btn" onClick={handleAddToCart}>
+          <button className="add-to-cart-btn" onClick={()=>{
+            if (!CartItems || !CartItems[product._id]) {
+            addToCart(product._id);
+            toast.success('Item added to cart', { position: 'bottom-left', autoClose: 1200 });
+            } else {
+              addToCart(product._id);
+            }
+          }}>
             Add to Cart
           </button>
           <p className="product-long-desc">{product.longDescription || 'This is a long description of the product. More details can be added here.'}</p>
@@ -125,7 +135,7 @@ const ProductDetail = () => {
         <h2>Related Products</h2>
         <div className="related-list">
           {related.map(item => (
-            <div key={item._id} className="related-card" onClick={() => navigate(`/product/${item._id}`)}>
+            <div key={item._id} className="related-card" onClick={() => navigate(`/product/${item.category}/${item._id}`)}>
               <img src={item.image} alt={item.name} />
               <div>{item.name}</div>
               <div>₹{item.price.toFixed(2)}</div>
@@ -133,6 +143,8 @@ const ProductDetail = () => {
           ))}
         </div>
       </div>
+      <ToastContainer />
+
     </div>
   );
 };

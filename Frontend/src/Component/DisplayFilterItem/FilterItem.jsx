@@ -63,8 +63,8 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
                 {filteredFoodList.map((item,index) => (
                     <div key={index} className="FilterItem-item" >
 
-                        <div className="filterItem-IMG" onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>
-                            <div className="Item-overlay">
+                        <div className="filterItem-IMG"  style={{cursor:'pointer'}}>
+                            <div className="Item-overlay" >
                                 <FontAwesomeIcon
                                 className="btncart1"
                                 onClick={() => {
@@ -85,8 +85,8 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
                             </div>
                              <img src={item.image} alt={item.name} />
                          </div>
-                        <div className="filterItem-des">
-                            <h3 onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>{item.name}</h3>
+                        <div className="filterItem-des" onClick={() => navigate(`/product/${item.category}/${item._id}`)}>
+                            <h3 onClick={() => navigate(`/product/${item.category}/${item._id}`)} style={{cursor:'pointer'}}>{item.name}</h3>
                             <p>Price:  <span>₹{item.price.toFixed(2)}</span>  </p>
                            
                           
