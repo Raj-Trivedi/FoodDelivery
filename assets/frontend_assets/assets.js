@@ -258,7 +258,15 @@ export const food_list =
         image: biryani_1,
         price: 205,
         description: "Hyderabadi Biryani is a savory dish that captures the essence of Indian cuisine.",
-        category: "Biryani"
+        category: "Biryani",
+        subtitle: "A Regional Delight from South Indian",
+        longDescription: "Hyderabadi Biryani is a beloved non vegetarian dish from South Indian cuisine. It's known for its unique blend of spices and traditional preparation methods.",
+        tags: [
+        { label: "Non Vegetarian", type: "nonveg" },
+        { label: "North Indian", type: "cuisine" },
+        { label: "Main Course", type: "course" }
+        ],
+        productTag: "South Indian Special"
     },
     {
         _id: "2",

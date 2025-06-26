@@ -1,3 +1,5 @@
+import React from 'react';
+import './Admin.css'; // Assuming you have a CSS file for styling
 const Admin = () => {
 
     const dashboardicon = (
@@ -20,7 +22,7 @@ const Admin = () => {
 
     const sidebarLinks = [
         { name: "Dashboard", path: "/admin", icon: dashboardicon },
-        { name: "Overview", path: "/admin/overview", icon: overviewicon },
+        { name: "ItemListing", path: "/admin/ItemListing", icon: overviewicon },
         { name: "Order", path: "/admin/Order", icon: chaticon },
     ];
 
@@ -32,7 +34,7 @@ const Admin = () => {
                 </a>
                 <div className="flex items-center gap-5 text-gray-500">
                     <p>Hi! Admin</p>
-                    <button className='border rounded-full text-sm px-4 py-1'>Logout</button>
+                    <button className='border rounded-full text-sm px-40  py-1'>Logout</button>
                 </div>
             </div>
             <div className="md:w-64 w-16 border-r h-[550px] text-base border-gray-300 pt-4 flex flex-col transition-all duration-300">

@@ -10,6 +10,7 @@ import Address from './Pages/Address/Address.jsx';
 import ProductDetail from './Component/ProductDetail/ProductDetail.jsx';
 import Myorder from './Pages/Myorder/Myorder.jsx';
 import Admin from './Pages/AdminPanel/Admin.jsx';
+import ItemListing from './Pages/ItemListing/ItemListing.jsx';
 
 
 
@@ -19,11 +20,18 @@ function App() {
   const location = useLocation();
 //false
   const isAuthPage = location.pathname === "/signup";
+  const isSellerPath= location.pathname.startsWith("/admin");
+
+  // // If the path starts with /admin, we consider it as an admin page
+  // if (isSellerPath) {
+  //   return <Admin />;
+  // }
 
   return (
     <>
     {/* true */}
       {!isAuthPage && <Navbar />} 
+
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -35,7 +43,10 @@ function App() {
         <Route path="/product/:category/:id" element={<ProductDetail />} />
         <Route path="/myorder" element={<Myorder />} />
         <Route path="/admin" element={<Admin/>} />
+        <Route path="/admin/ItemListing" element={<ItemListing/>} />
 
+        
+        
 
 
       </Routes>
