@@ -8,19 +8,41 @@ import add_icon_white from '../../../../assets/frontend_assets/add_icon_white.pn
 import add_icon_green from '../../../../assets/frontend_assets/add_icon_green.png';
 import remove_icon_red from '../../../../assets/frontend_assets/remove_icon_red.png';
 import basket_icon from '../../../../assets/frontend_assets/basket_icon.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
-const FoodItem = ({ id, image, name, description, price }) => {
+const FoodItem = ({ id, image, name, description, price, onAddToCart, onRemoveFromCart }) => {
   const [rating, setRating] = useState(0);
   // const [ItemCount, setItemCount] = useState(0);
   const { addToCart, removeFromCart,CartItems } = useContext(StoreContext);
+  const navigate = useNavigate();
 
   const handleStarClick = (value) => {
     setRating(value);
   };
 
+  const handleAddToCart = () => {
+    if (!CartItems[id]) {
+      addToCart(id);
+      if (onAddToCart) onAddToCart();
+    } else {
+      addToCart(id);
+    }
+  };
+
+  const handleRemoveFromCart = () => {
+    if (CartItems[id] === 1) {
+      removeFromCart(id);
+      if (onRemoveFromCart) onRemoveFromCart();
+    } else {
+      removeFromCart(id);
+    }
+  };
+
   return (
     <div className="food-item">
-      <div className="Food-img">
+      <div className="Food-img" onClick={() => navigate(`/product/${id}`)} style={{cursor:'pointer'}}>
         <img className="img" src={image} alt={name} />
 
         <div className="CountDiv">
@@ -31,14 +53,14 @@ const FoodItem = ({ id, image, name, description, price }) => {
             <div className="btnCountContainer">
               <img
                 className="btnCount"
-                onClick={() => addToCart(id)}
+                onClick={handleAddToCart}
                 src={add_icon_green}
                 alt="Add more"
               />
               <p>{CartItems[id]}</p>
               <img
                 className="btnCount"
-                onClick={() => removeFromCart(id)}
+                onClick={handleRemoveFromCart}
                 src={remove_icon_red}
                 alt="Remove"
               />
@@ -49,7 +71,7 @@ const FoodItem = ({ id, image, name, description, price }) => {
 
       <div className="Description">
         <div className="name-rating">
-          <span className="name">{name}</span>
+          <span className="name" onClick={() => navigate(`/product/${id}`)} style={{cursor:'pointer'}}>{name}</span>
           <span className="rating">
             {[1, 2, 3, 4, 5].map((value) => (
               <span
@@ -67,7 +89,7 @@ const FoodItem = ({ id, image, name, description, price }) => {
           <span className="price">₹{price.toFixed(2)}</span>
           <FontAwesomeIcon 
             className='btncart' 
-            onClick={() => addToCart(id)} 
+            onClick={handleAddToCart}
             icon={faCartShopping}
           />
         </div>

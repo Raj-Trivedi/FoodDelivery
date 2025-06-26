@@ -11,6 +11,7 @@ const StoreContextProvider = ({ children }) => {
   const [CostAfterShipping, setCostAfterShipping] = useState(0);
   const [shippingCharge, setShippingCharge] = useState(49.99);
   const [isExpress, setIsExpress] = useState(false);
+  const [address, setAddress] = useState(null);
 
   // Toggle like
   const toggleLike = (id) => {
@@ -84,6 +85,8 @@ const StoreContextProvider = ({ children }) => {
     setShippingCharge,
     isExpress,
     setIsExpress,
+    address,
+    setAddress,
   };
 
   return (

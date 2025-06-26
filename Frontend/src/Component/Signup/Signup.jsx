@@ -3,9 +3,30 @@ import './Signup.css'; // We will create this file
 import { useNavigate } from 'react-router-dom';
 import googleicon from '../../../../assets/frontend_assets/img/login/g2-removebg-preview.png';
 import logo from '../../../../assets/frontend_assets/img/logos/illustration-organic-food.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = ({ onToggle }) => {
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form[0].value.trim();
+    const email = form[1].value.trim();
+    const pass = form[2].value;
+    const confirm = form[3].value;
+    if (!name || !email || !pass || !confirm) {
+      toast.error('Please fill all fields!', { position: 'top-center', autoClose: 2000 });
+      return;
+    }
+    if (pass !== confirm) {
+      toast.error('Passwords do not match!', { position: 'top-center', autoClose: 2000 });
+      return;
+    }
+    toast.success('Signup successful!', { position: 'top-center', autoClose: 2000 });
+    setTimeout(() => navigate('/'), 1200);
+  };
 
   return (
     <>
@@ -24,7 +45,7 @@ const Signup = ({ onToggle }) => {
           <div className="login-detail">
             <h1>Create Account</h1>
             <p className='filldetail'>Please enter your details to sign up.</p>
-            <form className='login-form'>
+            <form className='login-form' onSubmit={handleSubmit}>
               <div className="input-box">
                 <p>Full Namess</p>
                 <input type="text" placeholder='Enter your full name' required />
@@ -69,6 +90,7 @@ const Signup = ({ onToggle }) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

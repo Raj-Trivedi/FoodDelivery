@@ -3,9 +3,29 @@ import './Login.css'
 import { useNavigate } from 'react-router-dom'
 import googleicon from '../../../../assets/frontend_assets/img/login/g2-removebg-preview.png'
 import logo from '../../../../assets/frontend_assets/img/logos/illustration-organic-food.png'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = ({ onToggle }) => {
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form[0].value.trim();
+    const pass = form[1].value;
+    if (!email || !pass) {
+      toast.error('Please fill all fields!', { position: 'top-center', autoClose: 2000 });
+      return;
+    }
+    // Mock login: accept any email/pass, but show error for a specific case
+    if (email === 'fail@example.com') {
+      toast.error('Invalid credentials!', { position: 'top-center', autoClose: 2000 });
+      return;
+    }
+    toast.success('Login successful!', { position: 'top-center', autoClose: 2000 });
+    setTimeout(() => navigate('/'), 1200);
+  };
 
   return (
     <>
@@ -24,7 +44,7 @@ const Login = ({ onToggle }) => {
           <div className="login-detail">
             <h1>Welcome Back</h1>
             <p className='filldetail'>Please enter your details to sign in.</p>
-            <form className='login-form'>
+            <form className='login-form' onSubmit={handleSubmit}>
               <div className="input-box">
                 <p>Email address</p>
                 <input type="email" placeholder='Enter your email' required />
@@ -60,6 +80,7 @@ const Login = ({ onToggle }) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   )
 }

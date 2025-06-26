@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../Context/StoreContext'
 import './CartItem.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartItem = ({totalItems}) => {
   const { food_list, CartItems, addToCart, removeFromCart } = useContext(StoreContext);
@@ -30,14 +32,35 @@ const CartItem = ({totalItems}) => {
                 <div>
                   <p>{item.name}</p>
                   {/* <span>PS4</span> */}
-                  <span onClick={() => removeFromCart(item._id)}>Remove</span>
+                  <span onClick={() => {
+                    if (CartItems[item._id] === 1) {
+                      removeFromCart(item._id);
+                      toast.info('Item removed from cart', { position: 'bottom-left', autoClose: 1200 });
+                    } else {
+                      removeFromCart(item._id);
+                    }
+                  }}>Remove</span>
                 </div>
               </div>
               <div className="cartitem-des">
                  <div className='QuantityControl'>
-                 <button onClick={() => removeFromCart(item._id)}>-</button>
+                 <button onClick={() => {
+                   if (CartItems[item._id] === 1) {
+                     removeFromCart(item._id);
+                     toast.info('Item removed from cart', { position: 'bottom-left', autoClose: 1200 });
+                   } else {
+                     removeFromCart(item._id);
+                   }
+                 }}>-</button>
                  <p>{CartItems[item._id]}</p>
-                 <button onClick={() => addToCart(item._id)}>+</button>
+                 <button onClick={() => {
+                   if (CartItems[item._id] === 0 || CartItems[item._id] === undefined) {
+                     addToCart(item._id);
+                     toast.success('Item added to cart', { position: 'bottom-left', autoClose: 1200 });
+                   } else {
+                     addToCart(item._id);
+                   }
+                 }}>+</button>
                  </div>  
 
                  <p>₹{item.price.toFixed(2)}</p>
@@ -53,6 +76,7 @@ const CartItem = ({totalItems}) => {
       })}
 
       <a href="/menu" className="ContinueShopping">← Continue Shopping</a>
+      <ToastContainer />
     </div>
   );
 };

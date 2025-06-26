@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
 import coupons from './coupons.js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartSummary = ({totalItems}) => {
    const [showChangeAddress, setShowChangeAddress] = useState(false);
@@ -14,7 +16,8 @@ const CartSummary = ({totalItems}) => {
     shippingCharge,
     setShippingCharge,
     isExpress,
-    setIsExpress
+    setIsExpress,
+    address
  } = useContext(StoreContext);
 
   const [couponInput, setCouponInput] = useState("");
@@ -55,6 +58,21 @@ const CartSummary = ({totalItems}) => {
     setDiscount(found.discount);
   };
 
+  const handlePlaceOrder = () => {
+    if (!address) {
+      toast.error('Please add a delivery address before placing your order!', {
+        position: 'top-center',
+        autoClose: 2500,
+      });
+      return;
+    }
+    // Place order logic here (if any)
+    toast.success('Order placed successfully!', {
+      position: 'top-center',
+      autoClose: 2500,
+    });
+  };
+
   return (
    <div className="CartSummary-container">
      <h2>
@@ -68,7 +86,13 @@ const CartSummary = ({totalItems}) => {
       <p className="Address-title">DELIVERY ADDRESS</p>
 
       <div className="Address-box">
-        <span className="Address-placeholder">No address found</span>
+        {address ? (
+          <span className="Address-placeholder">
+            {address.street}, {address.city}, {address.state}
+          </span>
+        ) : (
+          <span className="Address-placeholder">No address found</span>
+        )}
         <button className="Address-change" onClick={handleToggleChangeAddress}>
           Change
         </button>
@@ -147,10 +171,10 @@ const CartSummary = ({totalItems}) => {
        
         <div className="TotalCost-box">
             
-            <button className='Checkout-btn'>Place Order</button>
+            <button className='Checkout-btn' onClick={handlePlaceOrder}>Place Order</button>
         </div>
       </div>
-
+      <ToastContainer />
    </div>
   )
 }

@@ -3,6 +3,9 @@ import './FilterItem.css'
 import { StoreContext } from '../../Context/StoreContext'
 import { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 import { useState } from 'react';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +20,7 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
 
 
  
-    const { food_list ,addToCart,liked,toggleLike,searchItem } = useContext(StoreContext);
+    const { food_list ,addToCart,liked,toggleLike,searchItem, CartItems } = useContext(StoreContext);
     const SortItem = (food_list, sortBy) => {
     if (sortBy === 'default') return food_list;
     if (sortBy === 'LH'){
@@ -48,6 +51,8 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
 
     console.log("Filtered Food List:", filteredFoodList);
 
+    const navigate = useNavigate();
+
   return (
     <div className="FilterItem-container">
         <div className="FilterItem-header">
@@ -58,11 +63,18 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
                 {filteredFoodList.map((item,index) => (
                     <div key={index} className="FilterItem-item" >
 
-                        <div className="filterItem-IMG">
+                        <div className="filterItem-IMG" onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>
                             <div className="Item-overlay">
                                 <FontAwesomeIcon
                                 className="btncart1"
-                                onClick={() => addToCart(item._id)}
+                                onClick={() => {
+                                  if (!CartItems || !CartItems[item._id]) {
+                                    addToCart(item._id);
+                                    toast.success('Item added to cart', { position: 'bottom-left', autoClose: 1200 });
+                                  } else {
+                                    addToCart(item._id);
+                                  }
+                                }}
                                 icon={faCartShopping}
                                 />
                                 {/* <FontAwesomeIcon
@@ -74,7 +86,7 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
                              <img src={item.image} alt={item.name} />
                          </div>
                         <div className="filterItem-des">
-                            <h3>{item.name}</h3>
+                            <h3 onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>{item.name}</h3>
                             <p>Price:  <span>₹{item.price.toFixed(2)}</span>  </p>
                            
                           
@@ -87,8 +99,7 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
             </div>
 
         </div>
-
-
+        <ToastContainer />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import './FoodDisplay.css';
 import { StoreContext } from '../../Context/StoreContext.jsx';
 import FoodItem from '../FoodItem/FoodItem.jsx';
 
-const FoodDisplay = ({ category }) => {
+const FoodDisplay = ({ category, onAddToCart, onRemoveFromCart }) => {
   const { food_list } = useContext(StoreContext);
 
   const selectedIndices = [1, 6, 12, 18, 22, 27, 33, 38, 41, 49];
@@ -31,6 +31,8 @@ const FoodDisplay = ({ category }) => {
             name={item.name}
             description={item.description}
             price={item.price}
+            onAddToCart={onAddToCart}
+            onRemoveFromCart={onRemoveFromCart}
           />
         ))}
       </div>
