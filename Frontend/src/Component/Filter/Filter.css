@@ -1,159 +1,161 @@
-.Filter-Container{
-    padding:30px 50px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   max-width: 18vw;
-    
+.Filter-Container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(40,40,40,0.09);
+  padding: 32px 24px 28px 24px;
+  min-width: 220px;
+  max-width: 320px;
+  /* position: sticky; */
+  top: 32px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
-.filter-content
-{
-    overflow-x: scroll;
-    max-height: 20vw;
-    /* background: #000; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap:3px;
-    
-    
-}
-.Catergory_cont h3{
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #343a40;
-}
-.filter-content::-webkit-scrollbar {
-    visibility: hidden;
-}
-.categogy_list{
-    display: flex;
-    /* flex-direction: column; */
-    gap: 5px;
-}
-.categogy_item{
-    padding: 10px;
-    border-radius: 4px;
-    /* background-color: #e9ecef; */
-    color: #495057;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 1rem;
-}
-.categogy_item:hover {
-    color: rgb(223, 45, 45);
-    
-
-} 
-#mychecked:checked ~ .categogy_item {
-   
-  color: rgb(223, 45, 45);
-}
-#mychecked{
-  accent-color:red; 
+.Catergory_cont, .Range_cont, .Dietary_cont {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 
 }
-/* #mychecked :hover{
-    color: rgb(223, 45, 45);
-} */
 
-.Range_cont{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+.Catergory_cont:not(:last-child), .Range_cont:not(:last-child), .Dietary_cont:not(:last-child) {
+  margin-bottom: 28px;
+  border-bottom: 1.5px solid #f3f0fa;
+  padding-bottom: 18px;
 }
-.Range_cont h3{
-     margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #343a40;
+
+.Catergory_cont h3, .Range_cont h3, .Dietary_cont h3 {
+  font-size: 1.13em;
+  font-weight: 700;
+  color: #414141;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
 }
+
+.filter-content {
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filter-content::-webkit-scrollbar{
+  display: none;
+}
+
+.categogy_list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.categogy_item {
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #2d1e4a;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+}
+
+.categogy_item:hover, #mychecked:checked ~ .categogy_item {
+  color: #7c2ae8;
+  /* background: #f3f0fa; */
+}
+
+#mychecked {
+  accent-color: #7c2ae8;
+}
+
 .Range_cont input[type="range"] {
-    width: 100%;
-    -webkit-appearance: none;
-    background: #e9ecef;
-    height: 8px;
-    border-radius: 4px; 
+  width: 100%;
+  background: #f3f0fa;
+  height: 7px;
+  border-radius: 4px;
+  accent-color: #7c2ae8;
 }
+
 .Range_cont input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background:rgb(223, 45, 45);
-    border: 2px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;    
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #7c2ae8;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(40,40,40,0.10);
+  cursor: pointer;
 }
 
+.Range_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
-.Range_value{
-    display: flex;
-    /* justify-content: space-between; */
-    
-    color: #495057;
-    
-    margin-top: 5px;
-}
-.Range_value span {
-    font-weight: bold;
-}
-.Range_value p{
-    font-size: 14px;
-    margin-right: 5px;
-    color: #6c757d;
-
-}
-.Range_value input {
-    width: 60px;
-    padding: 5px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #495057; 
-}
 .Range_item label {
-    color: #343a40;
-}
-.Range_item span{
-   font-size: 0.9rem;
-    color: #495057;
+  font-size: 1em;
+  color: #5d5d5e;
+  /* font-weight: 600; */
+  min-width: 80px;
 }
 
-.Dietary_cont{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap:3px;
+.Range_item span {
+  color: #6228ae;
+  font-weight: 600;
+  min-width: 60px;
+}
 
+.Range_value {
+  color: #888;
+  font-size: 0.98em;
+  margin-top: 6px;
+  margin-bottom: 0;
 }
-.Dietary_cont h3{
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #343a40;
+
+.Dietary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .Dietary-item {
-    display: flex;
-    /* flex-direction: column; */
-    gap: 5px;
-
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.Dietary-list label{
-    padding: 10px;
-    border-radius: 4px;
-    /* background-color: #e9ecef; */
-    color: #495057;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 1rem;
+
+.Dietary-item label {
+  color: #2d1e4a;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.18s;
 }
-.Dietary-list label:hover {
-    color: rgb(223, 45, 45);
-    
 
-} 
+.Dietary-item label:hover {
+  color: #7c2ae8;
+}
 
-.Dietary-list input[type="checkbox"]:checked + label {
-    color: rgb(223, 45, 45);
+.Dietary-item input[type="checkbox"]:checked + label {
+  color: #7c2ae8;
+}
+
+hr {
+  border: none;
+  border-top: 1.5px solid #f3f0fa;
+  margin: 18px 0;
+}
+
+@media (max-width: 900px) {
+  .Filter-Container {
+    min-width: 0;
+    max-width: 100%;
+    padding: 14px 8px;
+    gap: 14px;
+  }
 }

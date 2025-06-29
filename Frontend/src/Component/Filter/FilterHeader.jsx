@@ -3,9 +3,9 @@ import './FilterHeader.css';
 
 const FilterHeader = ({sortBy,setSortBy}) => {
   return (
-    <div className="FilterHeader-Container">
-        <div className="filter-sort">
-             <label htmlFor="">Sort by: </label>
+    <div className="FilterHeader-container">
+        <div className="FilterHeader-sort">
+             <label className=''>Sort by: </label>
 
             <select className="filter-select" onChange={(e)=> {setSortBy(e.target.value)}} >
                 <option value="default">Default</option>

@@ -62,38 +62,20 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
             <div className="FilterItem-items">
                 {filteredFoodList.map((item,index) => (
                     <div key={index} className="FilterItem-item" >
-
-                        <div className="filterItem-IMG"  style={{cursor:'pointer'}}>
-                            <div className="Item-overlay" >
-                                <FontAwesomeIcon
-                                className="btncart1"
-                                onClick={() => {
-                                  if (!CartItems || !CartItems[item._id]) {
-                                    addToCart(item._id);
-                                    toast.success('Item added to cart', { position: 'bottom-left', autoClose: 1200 });
-                                  } else {
-                                    addToCart(item._id);
-                                  }
-                                }}
-                                icon={faCartShopping}
-                                />
-                                {/* <FontAwesomeIcon
-                                className="btncart1"
-                                onClick={toggleLike(item._id)}
-                                icon={liked[item._id]===1 ? faSolidHeart : faRegularHeart}
-                                /> */}
+                        <div className="filterItem-IMG" style={{cursor:'pointer', position:'relative'}}>
+                            <img src={item.image} alt={item.name} />
+                            <div className="Item-overlay">
+                              <button className="card-btn add-btn" onClick={e => {e.stopPropagation(); if (!CartItems || !CartItems[item._id]) { addToCart(item._id); toast.success('Item added to cart', { position: 'bottom-left', autoClose: 1200 }); } else { addToCart(item._id); }}}>Add to Cart</button>
+                              <button className="card-btn view-btn" onClick={e => {e.stopPropagation(); navigate(`/product/${item._id}`)}}>View Details</button>
                             </div>
-                             <img src={item.image} alt={item.name} />
-                         </div>
-                        <div className="filterItem-des" onClick={() => navigate(`/product/${item.category}/${item._id}`)}>
-                            <h3 onClick={() => navigate(`/product/${item.category}/${item._id}`)} style={{cursor:'pointer'}}>{item.name}</h3>
-                            <p>Price:  <span>₹{item.price.toFixed(2)}</span>  </p>
-                           
-                          
-                            
                         </div>
-                       
-                      
+                        <div className="filterItem-des">
+                            <div className="card-title-row">
+                              <h3 onClick={() => navigate(`/product/${item._id}`)}>{item.name}</h3>
+                              <span className="card-price">₹{item.price.toFixed(2)}</span>
+                            </div>
+                            <div className="card-desc">{item.longDescription?.slice(0, 60) || item.description}</div>
+                        </div>
                     </div>
                 ))}
             </div>

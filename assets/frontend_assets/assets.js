@@ -925,7 +925,18 @@ export const food_list =
         description: "Besan Halwa is a hearty dish made with care for a truly comforting experience.",
         category: "Halwa"
     }
-]
+].map(item => ({
+  ...item,
+  subtitle: item.subtitle || 'A delicious dish from our menu',
+  longDescription: item.longDescription || 'This is a long description of the product. More details can be added here.',
+  tags: item.tags || [
+    { label: 'Vegetarian', type: 'veg' },
+    { label: 'Indian', type: 'cuisine' },
+    { label: 'Main Course', type: 'course' }
+  ],
+  productTag: item.productTag || 'Specialty Dish',
+  images: item.images || [item.image],
+}));
 
 
 

@@ -1,46 +1,61 @@
-.FilterHeader-Container{
-    padding:20px 100px;
-    /* align-items: flex-end; */
+.FilterHeader-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 18px 0;
+  margin-bottom: 8px;
+  border-bottom: 1.5px solid #f2e9fa;
+  gap: 18px;
 }
-.filter-sort{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    gap:20px;
-    
+.FilterHeader-title {
+  font-size: 1.35em;
+  font-weight: 700;
+  color: #7c2ae8;
+  margin: 0;
 }
-.filter-select{
-    width: 200px;
-    height: 40px;
-    border-radius: 8px;
-    border:none;
-    outline: none;
-    padding: 0 10px;
-    font-size: 16px;
-    color: #495057;
-    background-color: #f8f9fa;
-    cursor: pointer;
+.FilterHeader-count {
+  font-size: 1.08em;
+  color: #888;
+  margin-left: 10px;
 }
-.filter-select:hover{
-    background-color: #e9ecef;
+.FilterHeader-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.filter-select:focus{
-    /* border: .5px solid rgb(179, 170, 170); */
-    box-shadow: 0 0 5px rgba(215, 226, 121, 0.2);
-}     
-.filter-select option{
-    padding: 10px;
-    background-color: #f8f9fa;
-    color: #495057;
+.FilterHeader-sort label {
+  font-size: 1em;
+  color: #7c2ae8;
+  font-weight: 500;
 }
-.filter-select option:hover{
-    background-color: #000000;
+.FilterHeader-sort select {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1.5px solid #e0d7f7;
+  font-size: 1em;
+  color: #2d1e4a;
+  background: #faf8ff;
+  font-weight: 500;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+  appearance: none;
+  cursor: pointer;
 }
-.filter-select option:focus{
-    background-color: #e9ecef;
-    color: #495057;
+.FilterHeader-sort select:focus {
+  border-color: #7c2ae8;
+  box-shadow: 0 0 0 2px #e6dbfa;
 }
-.filter-select option:active{
-    background-color: #e9ecef;  
-}      
+.FilterHeader-sort select option {
+  background: #fff;
+  color: #2d1e4a;
+  font-size: 1em;
+}
+@media (max-width: 900px) {
+  .FilterHeader-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+}
