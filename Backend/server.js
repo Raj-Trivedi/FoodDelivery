@@ -1,30 +1,25 @@
 import express from 'express';
+import cors from 'cors';
+import { connectDB } from './config/Connectdb.js';
+import { foodRouter } from './routes/foodRoute.js';
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
+
 const PORT = process.env.PORT || 5000;
+
+//DB connection
+connectDB();
+app.use('/api/food',foodRouter);
 
 app.get('/', (req, res) => {
   res.send('Api Testing');
 });
 
-app.use(express.json());
-
-app.post('/toggle-like/:id', (req, res) => {
-  const { id } = req.params;
-  
-  res.json({ message: `Toggled like for item ${id}` });
-});
-
-app.post('/add-to-cart/:itemId', (req, res) => {
-  const { itemId } = req.params;
-  res.json({ message: `Added item ${itemId} to cart` });
-});
-
-app.post('/remove-from-cart/:itemId', (req, res) => {
-  const { itemId } = req.params;
-  res.json({ message: `Removed item ${itemId} from cart` });
-});
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
+
