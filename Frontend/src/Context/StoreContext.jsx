@@ -42,7 +42,7 @@ const StoreContextProvider = ({ children }) => {
     setCartItems((prev) => {
       const updatedCart = { ...prev };
       if (updatedCart[itemId] > 1) {
-        updatedCart[itemId] -= 1;setCartItems
+        updatedCart[itemId] -= 1;
       } else {
         delete updatedCart[itemId];
       }

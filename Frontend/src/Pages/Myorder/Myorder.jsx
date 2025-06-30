@@ -6,6 +6,7 @@ import './Myorder.css'
 const Myorder = () => {
     const { myorder,food_list,CartItems } = useContext(StoreContext);
     console.log(myorder);
+    console.log(CartItems,"CartItems")
 
   return (
     <div className="order-container">
@@ -21,28 +22,30 @@ const Myorder = () => {
         <hr />
 
        <div className="Order-List">
-        {food_list.map((item, index) => {
-            if (myorder[item._id] > 0) {
+        {food_list && food_list.length > 0 ? (
+          food_list.map((item, index) => {
+            // Check if item and item._id exist to avoid runtime errors
+            if (item && item._id && myorder[item._id] > 0) {
                 return (
-                    <div key={index} className='order-item'>
+                    <div key={item._id} className='order-item'>
                         <div className="orderItem-Img">
-                            <img src={item.image} alt="" />
+                            <img src={item.image} alt={item.name || "food item"} />
                         </div>
                         <div className="orderItem-desc">
                             {/* <p className='order-id'>{item._id}</p> */}
                             <p>{item.name}</p>
-                            <p className='order-quantity'>{myorder[item._id].quantity}</p>
-                            <p className='order-total'>${item.price}</p>
-                            <p>₹{(item.price * CartItems[item._id]).toFixed(2)}</p>
-
+                            <p className='order-quantity'>{myorder[item._id]}</p>
+                            <p className='order-total'>₹{Number(item.price).toFixed(2)}</p>
+                            <p>₹{(Number(item.price) * myorder[item._id]).toFixed(2)}</p>
                         </div>
-
-                      
                     </div>
                 )
             }
             return null;
-        })}
+          })
+        ) : (
+          <p>No items found in your order.</p>
+        )}
        </div>
     </div>
   )
