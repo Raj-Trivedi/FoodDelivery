@@ -85,6 +85,23 @@ const StoreContextProvider = ({ children }) => {
     setCostAfterShipping(totalWithShipping);
   }, [TotalCost, shippingCharge, isExpress]);
 
+  const placeOrder = (shipping = 0, discount = 0) => {
+    setMyorder(prev => {
+      const newOrders = { ...prev };
+      Object.keys(CartItems).forEach(id => {
+        newOrders[id] = {
+          quantity: CartItems[id],
+          date: new Date().toLocaleDateString(),
+          status: 'Delivered',
+          shipping,
+          discount,
+        };
+      });
+      return newOrders;
+    });
+    setCartItems({});
+  };
+
   const valueList = {
     food_list,
     addToCart,
@@ -107,7 +124,8 @@ const StoreContextProvider = ({ children }) => {
     myorder,
     setMyorder,
     // 
-    addToMyOrder
+    addToMyOrder,
+    placeOrder
   };
 
   return (

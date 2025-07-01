@@ -18,8 +18,8 @@ const CartSummary = ({totalItems}) => {
     setShippingCharge,
     isExpress,
     setIsExpress,
-    address,setMyorder,CartItems,addToMyOrder,setCartItems
-    
+    address,
+    placeOrder
  } = useContext(StoreContext);
 
   const [couponInput, setCouponInput] = useState("");
@@ -66,29 +66,14 @@ const CartSummary = ({totalItems}) => {
         position: 'top-center',
         autoClose: 2500,
       });
-
-      
+      return;
     }
-    console.log("CartItems:", CartItems);
-    
-    // Add items to my order
-    Object.keys(CartItems).forEach(itemId => {
-      addToMyOrder(itemId);
-    });
-    
-    // Reset cart items after placing order
-  
-    
-    // Clear cart items
-    
-    // CartItems = {};
-    // Place order logic here (if any)
+    placeOrder(shippingCharge, discount);
     toast.success('Order placed successfully!', {
       position: 'top-center',
       autoClose: 2500,
     });
-     setTimeout(() => navigate('/'), 500);
-    setCartItems({});
+    setTimeout(() => navigate('/'), 500);
   };
 
   return (
