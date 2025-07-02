@@ -4,7 +4,7 @@ import logo from '../../../../assets/frontend_assets/img/logos/illustration-orga
 import search_icon from '../../../../assets/frontend_assets/search_icon.png'
 import Cart_icon from '../../../../assets/frontend_assets/basket_icon.png'
 import cross_icon from '../../../../assets/frontend_assets/cross_icon.png'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext.jsx';
 import  { useContext } from 'react';
 import { AppContext } from '../../Context/AppContext.jsx'
@@ -17,11 +17,23 @@ export const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const searchInputRef = useRef(null);
     const navigate = useNavigate();
+    const location = useLocation();
     const { User, SetUser,isAuthenticated ,setIsAuthenticated } = useContext(AppContext);
     
 
    const { CartItems,searchItem,setSearchItem } = useContext(StoreContext);
 //    console.log(CartItems.length)
+
+    // Update active menu based on route path
+    React.useEffect(() => {
+        const path = location.pathname;
+        if (path === "/") setMenu("home");
+        else if (path === "/menu") setMenu("menu");
+        else if (path === "/aboutUs") setMenu("about");
+        else if (path === "/myorder") setMenu("myorder");
+        else setMenu("");
+    }, [location.pathname]);
+
 
     // Collapse search bar on outside click
     React.useEffect(() => {

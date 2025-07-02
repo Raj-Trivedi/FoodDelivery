@@ -2,9 +2,12 @@ import React from 'react'
 import './Header.css'
 import foodImg from '../../../../assets/frontend_assets/img/header/thali.png'
 import foodImg2 from '../../../../assets/frontend_assets/img/header/gulab janum.jpg'
-
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+
+  const navigate = useNavigate();
+
   return (
     <header className="hero">
       <div className="hero-content">
@@ -15,7 +18,7 @@ const Header = () => {
         Choose from a wide variety of delicious meals and get them delivered fast. Simple, quick, and just the way you like it.
         </p>
         <div className="hero-actions">
-          <button className="hero-btn primary">Order Now</button>
+          <button className="hero-btn primary" onClick={() => { navigate("/menu");}}>Order Now</button>
           <button className="hero-btn howto">
             <span className="howto-circle" />
             How To Order

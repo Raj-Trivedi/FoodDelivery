@@ -19,7 +19,7 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
     // const [liked, setLiked] = useState(false);
 
 
- 
+    const navigation = useNavigate();
     const { food_list ,addToCart,liked,toggleLike,searchItem, CartItems } = useContext(StoreContext);
     const SortItem = (food_list, sortBy) => {
     if (sortBy === 'default') return food_list;
@@ -66,12 +66,12 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
                             <img src={item.image} alt={item.name} />
                             <div className="Item-overlay">
                               <button className="card-btn add-btn" onClick={e => {e.stopPropagation(); if (!CartItems || !CartItems[item._id]) { addToCart(item._id); toast.success('Item added to cart', { position: 'bottom-left', autoClose: 1200 }); } else { addToCart(item._id); }}}>Add to Cart</button>
-                              <button className="card-btn view-btn" onClick={e => {e.stopPropagation(); navigate(`/product/${item._id}`)}}>View Details</button>
+                              <button className="card-btn view-btn" onClick={e => {e.stopPropagation(); navigate(`/product/${item.name}/${item._id}`)}}>View Details</button>
                             </div>
                         </div>
-                        <div className="filterItem-des">
+                        <div className="filterItem-des" onClick={() => navigate(`/product/${item.name}/${item._id}`)}>
                             <div className="card-title-row">
-                              <h3 onClick={() => navigate(`/product/${item._id}`)}>{item.name}</h3>
+                              <h3>{item.name}</h3>
                               <span className="card-price">₹{item.price.toFixed(2)}</span>
                             </div>
                             <div className="card-desc">{item.longDescription?.slice(0, 60) || item.description}</div>

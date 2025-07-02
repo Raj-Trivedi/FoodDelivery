@@ -53,14 +53,14 @@ const FoodItem = ({ id, image, name, description, price, onAddToCart, onRemoveFr
             <div className="btnCountContainer">
               <img
                 className="btnCount"
-                onClick={handleAddToCart}
+                onClick={(e) => { e.stopPropagation(); handleAddToCart(); }}
                 src={add_icon_green}
                 alt="Add more"
               />
               <p>{CartItems[id]}</p>
               <img
                 className="btnCount"
-                onClick={handleRemoveFromCart}
+                onClick={(e) => { e.stopPropagation(); handleRemoveFromCart(); }}
                 src={remove_icon_red}
                 alt="Remove"
               />

@@ -42,6 +42,10 @@
     cursor: pointer;
 }
 
+.social-icons{
+    display: flex;
+}
+
 .footer-content .footer-center h4,
 .footer-content .footer-right h4 {
     font-size: 1.2rem;

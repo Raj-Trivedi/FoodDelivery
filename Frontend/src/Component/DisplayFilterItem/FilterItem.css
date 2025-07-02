@@ -117,13 +117,13 @@
   font-weight: 600;
   cursor: pointer;
   background: #fff;
-  color: #7c2ae8;
+  color: #f3685f;
   box-shadow: 0 1px 4px rgba(40,40,40,0.08);
   transition: background 0.18s, color 0.18s, box-shadow 0.18s;
   margin-bottom: 0;
 }
 .card-btn.add-btn {
-  background: #7c2ae8;
+  background: #e67e22;
   color: #fff;
 }
 .card-btn.add-btn:hover {
@@ -133,8 +133,8 @@
 }
 .card-btn.view-btn {
   background: #fff;
-  color: #7c2ae8;
-  border: 1.5px solid #7c2ae8;
+  color: #e67e22;
+  border: 1.5px solid #e67e22;
 }
 .card-btn.view-btn:hover {
   background: #f3f0fa;

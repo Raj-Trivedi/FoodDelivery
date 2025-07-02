@@ -56,7 +56,7 @@
 .categogy_item {
   padding: 6px 10px;
   border-radius: 6px;
-  color: #2d1e4a;
+  color: #495057;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
@@ -64,12 +64,12 @@
 }
 
 .categogy_item:hover, #mychecked:checked ~ .categogy_item {
-  color: #7c2ae8;
+  color: #f3685f;
   /* background: #f3f0fa; */
 }
 
 #mychecked {
-  accent-color: #7c2ae8;
+  accent-color: #f3685f;
 }
 
 .Range_cont input[type="range"] {
@@ -77,16 +77,16 @@
   background: #f3f0fa;
   height: 7px;
   border-radius: 4px;
-  accent-color: #7c2ae8;
+  accent-color: #f3685f;
 }
 
 .Range_cont input[type="range"]::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #7c2ae8;
+  background: #888;
   border: 2px solid #fff;
-  box-shadow: 0 2px 4px rgba(40,40,40,0.10);
+  /* box-shadow: 0 2px 4px rgba(40,40,40,0.10); */
   cursor: pointer;
 }
 
@@ -105,7 +105,7 @@
 }
 
 .Range_item span {
-  color: #6228ae;
+  color: #495057;
   font-weight: 600;
   min-width: 60px;
 }
@@ -130,7 +130,7 @@
 }
 
 .Dietary-item label {
-  color: #2d1e4a;
+  color: #495057;
   font-size: 1rem;
   cursor: pointer;
   font-weight: 500;
@@ -138,11 +138,11 @@
 }
 
 .Dietary-item label:hover {
-  color: #7c2ae8;
+  color: #f3685f;
 }
 
 .Dietary-item input[type="checkbox"]:checked + label {
-  color: #7c2ae8;
+  color: #f3685f;
 }
 
 hr {
