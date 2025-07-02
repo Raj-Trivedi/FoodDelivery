@@ -5,11 +5,6 @@ import './Myorder.css'
 import { useNavigate } from 'react-router-dom';
 
 const Myorder = () => {
-<<<<<<< HEAD
-    const { myorder,food_list,CartItems } = useContext(StoreContext);
-    console.log(myorder);
-    console.log(CartItems,"CartItems")
-=======
     const { myorder, food_list } = useContext(StoreContext);
     const navigate = useNavigate();
     // Get all ordered items
@@ -22,7 +17,6 @@ const Myorder = () => {
       const discount = order.discount || 0;
       return sum + (item.price * order.quantity + shipping - discount);
     }, 0);
->>>>>>> e92c8dd133807b0e26dc89872e06c5066f662475
 
     if (totalOrders === 0) {
       return (
@@ -54,37 +48,9 @@ const Myorder = () => {
           <p>Total</p>
         </div>
         <hr />
-<<<<<<< HEAD
 
-       <div className="Order-List">
-        {food_list && food_list.length > 0 ? (
-          food_list.map((item, index) => {
-            // Check if item and item._id exist to avoid runtime errors
-            if (item && item._id && myorder[item._id] > 0) {
-                return (
-                    <div key={item._id} className='order-item'>
-                        <div className="orderItem-Img">
-                            <img src={item.image} alt={item.name || "food item"} />
-                        </div>
-                        <div className="orderItem-desc">
-                            {/* <p className='order-id'>{item._id}</p> */}
-                            <p>{item.name}</p>
-                            <p className='order-quantity'>{myorder[item._id]}</p>
-                            <p className='order-total'>₹{Number(item.price).toFixed(2)}</p>
-                            <p>₹{(Number(item.price) * myorder[item._id]).toFixed(2)}</p>
-                        </div>
-                    </div>
-                )
-            }
-            return null;
-          })
-        ) : (
-          <p>No items found in your order.</p>
-        )}
-       </div>
-    </div>
-  )
-=======
+
+ 
         <div className="Order-List">
           {orderedItems.map((item, index) => {
             const order = myorder[item._id];
@@ -115,7 +81,6 @@ const Myorder = () => {
         </div>
       </div>
     )
->>>>>>> e92c8dd133807b0e26dc89872e06c5066f662475
 }
 
 export default Myorder

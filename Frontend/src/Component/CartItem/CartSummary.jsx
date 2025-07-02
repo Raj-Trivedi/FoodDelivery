@@ -7,7 +7,6 @@ import { StoreContext } from '../../Context/StoreContext';
 import coupons from '../../../../assets/frontend_assets/coupons.js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Cart from '../../Pages/Cart.jsx';
 
 const CartSummary = ({totalItems}) => {
    const [showChangeAddress, setShowChangeAddress] = useState(false);
