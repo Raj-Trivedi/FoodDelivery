@@ -9,9 +9,16 @@ const FoodDisplay = ({ category, onAddToCart, onRemoveFromCart }) => {
   const selectedIndices = [1, 6, 12, 18, 22, 27, 33, 38, 41, 49];
   const selectedItems = selectedIndices.map(index => food_list[index])
 
-  const filteredItems = food_list.filter(item => item.category === category);
+  // Select 10 random items if category is 'All'
+  function getRandomItems(arr, n) {
+    const shuffled = arr.slice().sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, n);
+  }
 
-  const itemsToRender = category === "All" ? selectedItems : filteredItems;
+  const filteredItems = food_list.filter(item => item.category === category);
+  const itemsToRender = category === "All"
+    ? getRandomItems(food_list, 10)
+    : filteredItems;
 
   console.log("Items to render:", itemsToRender);
   // console.log("Full food_list:", food_list);
@@ -23,7 +30,7 @@ const FoodDisplay = ({ category, onAddToCart, onRemoveFromCart }) => {
     <div className="food-display">
       <h1>Top Dishes Near You</h1>
       <div className="food-items">
-        {itemsToRender.map((item, index) => (
+        {itemsToRender.filter(Boolean).map((item, index) => (
           <FoodItem
             key={item._id || index}
             id={item._id}

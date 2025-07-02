@@ -61,7 +61,7 @@ const Myorder = () => {
             return (
               <div key={index} className='order-item'>
                 <div className="orderItem-Img" onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>
-                  <img src={item.image} alt={item.name} />
+                  <img src={item.image && !item.image.startsWith('http') ? `http://localhost:5000/upload/${item.image}` : item.image} alt={item.name} />
                 </div>
                 <div className="orderItem-desc">
                   <p className="order-name" onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>{item.name}</p>
