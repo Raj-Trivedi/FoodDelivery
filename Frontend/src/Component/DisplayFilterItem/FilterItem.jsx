@@ -63,7 +63,7 @@ const FilterItem = ({category,minPrice,maxPrice,sortBy}) => {
                 {filteredFoodList.map((item,index) => (
                     <div key={index} className="FilterItem-item" >
                         <div className="filterItem-IMG" style={{cursor:'pointer', position:'relative'}}>
-                            <img src={item.image} alt={item.name} />
+                            <img src={item.image && !item.image.startsWith('http') ? `http://localhost:5000/upload/${item.image}` : item.image} alt={item.name} />
                             <div className="Item-overlay">
                               <button className="card-btn add-btn" onClick={e => {e.stopPropagation(); if (!CartItems || !CartItems[item._id]) { addToCart(item._id); toast.success('Item added to cart', { position: 'bottom-left', autoClose: 1200 }); } else { addToCart(item._id); }}}>Add to Cart</button>
                               <button className="card-btn view-btn" onClick={e => {e.stopPropagation(); navigate(`/product/${item.name}/${item._id}`)}}>View Details</button>

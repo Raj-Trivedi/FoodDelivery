@@ -11,8 +11,7 @@ import ProductDetail from './Component/ProductDetail/ProductDetail.jsx';
 import Myorder from './Pages/Myorder/Myorder.jsx';
 import Admin from './Pages/AdminPanel/Admin.jsx';
 import ItemListing from './Pages/ItemListing/ItemListing.jsx';
-
-
+import AdminPanelNew from './Pages/adminpanelnew/AdminPanelNew.jsx';
 
 import './Responsive.css';
 
@@ -44,6 +43,7 @@ function App() {
         <Route path="/myorder" element={<Myorder />} />
         <Route path="/admin" element={<Admin/>} />
         <Route path="/admin/ItemListing" element={<ItemListing/>} />
+        <Route path="/admin/new" element={<AdminPanelNew />} />
 
         
         

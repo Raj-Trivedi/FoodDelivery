@@ -43,7 +43,7 @@ const FoodItem = ({ id, image, name, description, price, onAddToCart, onRemoveFr
   return (
     <div className="food-item">
       <div className="Food-img" onClick={() => navigate(`/product/${name}/${id}`)} style={{cursor:'pointer'}}>
-        <img className="img" src={image} alt={name} />
+        <img className="img" src={image && !image.startsWith('http') ? `http://localhost:5000/upload/${image}` : image} alt={name} />
 
         <div className="CountDiv">
           {!CartItems[id] ? (

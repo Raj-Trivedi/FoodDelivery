@@ -79,12 +79,12 @@ const ProductDetail = () => {
     <div className="product-detail-container">
       <div className="product-main modern-layout">
         <div className="product-img-section">
-          <img src={mainImg} alt={product.name} className="product-detail-img-large" />
+          <img src={mainImg && !mainImg.startsWith('http') ? `http://localhost:5000/upload/${mainImg}` : mainImg} alt={product.name} className="product-detail-img-large" />
           <div className="product-thumbnails">
             {thumbnails.map((img, idx) => (
               <img
                 key={idx}
-                src={img}
+                src={img && !img.startsWith('http') ? `http://localhost:5000/upload/${img}` : img}
                 alt={`thumb-${idx}`}
                 className={`product-thumb ${mainImg === img ? 'selected' : ''}`}
                 onClick={() => setMainImg(img)}
@@ -285,7 +285,7 @@ const ProductDetail = () => {
         <div className="related-list">
           {related.map(item => (
             <div key={item._id} className="related-card" onClick={() => navigate(`/product/${item.category}/${item._id}`)}>
-              <img src={item.image} alt={item.name} />
+              <img src={item.image && !item.image.startsWith('http') ? `http://localhost:5000/upload/${item.image}` : item.image} alt={item.name} />
               <div>{item.name}</div>
               <div>₹{item.price.toFixed(2)}</div>
             </div>

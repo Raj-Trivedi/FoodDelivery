@@ -28,7 +28,7 @@ const CartItem = ({totalItems}) => {
           return (
             <div key={index} className='cart-items'>
               <div className='Cart-item_details'>
-                <img src={item.image} alt={item.name} />
+                <img src={item.image && !item.image.startsWith('http') ? `http://localhost:5000/upload/${item.image}` : item.image} alt={item.name} />
                 <div>
                   <p>{item.name}</p>
                   {/* <span>PS4</span> */}

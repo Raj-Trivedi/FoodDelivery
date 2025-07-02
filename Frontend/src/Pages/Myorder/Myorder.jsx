@@ -5,7 +5,6 @@ import './Myorder.css'
 import { useNavigate } from 'react-router-dom';
 
 const Myorder = () => {
-
     const { myorder, food_list } = useContext(StoreContext);
     const navigate = useNavigate();
     // Get all ordered items
@@ -49,7 +48,7 @@ const Myorder = () => {
           <p>Total</p>
         </div>
         <hr />
-
+            
         <div className="Order-List">
           {orderedItems.map((item, index) => {
             const order = myorder[item._id];
@@ -60,7 +59,7 @@ const Myorder = () => {
             return (
               <div key={index} className='order-item'>
                 <div className="orderItem-Img" onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>
-                  <img src={item.image} alt={item.name} />
+                  <img src={item.image && !item.image.startsWith('http') ? `http://localhost:5000/upload/${item.image}` : item.image} alt={item.name} />
                 </div>
                 <div className="orderItem-desc">
                   <p className="order-name" onClick={() => navigate(`/product/${item._id}`)} style={{cursor:'pointer'}}>{item.name}</p>

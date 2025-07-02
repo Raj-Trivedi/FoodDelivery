@@ -1,9 +1,10 @@
 import { createContext, useState, useEffect } from "react";
-import { food_list } from "../../../assets/frontend_assets/assets";
+// import { food_list } from "../../../assets/frontend_assets/assets";
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
+  const [foodList, setFoodList] = useState([]);
   const [CartItems, setCartItems] = useState({});
   const [TotalCost, setTotalCost] = useState(0);
   const [liked, setLiked] = useState({});
@@ -13,6 +14,20 @@ const StoreContextProvider = ({ children }) => {
   const [isExpress, setIsExpress] = useState(false);
   const [address, setAddress] = useState(null);
   const [myorder, setMyorder] = useState({});
+
+  // Fetch food list from backend
+  useEffect(() => {
+    const fetchFoods = async () => {
+      try {
+        const res = await fetch('/api/food/');
+        const data = await res.json();
+        if (data.success) setFoodList(data.data);
+      } catch (err) {
+        setFoodList([]);
+      }
+    };
+    fetchFoods();
+  }, []);
 
   // Toggle like
   const toggleLike = (id) => {
@@ -63,13 +78,13 @@ const StoreContextProvider = ({ children }) => {
     let total = 0;
     for (const itemId in CartItems) {
       const quantity = CartItems[itemId];
-      const item = food_list.find((item) => item._id === itemId);
+      const item = foodList.find((item) => item._id === itemId);
       if (item) {
         total += item.price * quantity;
       }
     }
     setTotalCost(total);
-  }, [CartItems]);
+  }, [CartItems, foodList]);
 
   // Calculate total cost with shipping charge
   useEffect(() => {
@@ -103,7 +118,7 @@ const StoreContextProvider = ({ children }) => {
   };
 
   const valueList = {
-    food_list,
+    food_list: foodList,
     addToCart,
     removeFromCart,
     CartItems,

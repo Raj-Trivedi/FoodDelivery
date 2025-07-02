@@ -12,6 +12,8 @@ const addFood = async (req,res)=>{
 }
 
  let image_fileName= `${req.file.filename}`; // getting image file name from request
+
+ 
  
  const food= new foodModel({ // creating a new food item
     // req.body is used to get data from the body of the request
@@ -36,4 +38,15 @@ const addFood = async (req,res)=>{
    
 }
 
-export {addFood};
+// Get all food items
+const getAllFoods = async (req, res) => {
+  try {
+    const foods = await foodModel.find();
+    res.json({ success: true, data: foods });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Error fetching food items" });
+  }
+};
+
+export {addFood, getAllFoods};
